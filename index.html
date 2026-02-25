@@ -256,6 +256,51 @@
       line-height: 1.65;
     }
 
+    .hero-visual-strip {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .hero-visual-pill {
+      position: relative;
+      min-width: 180px;
+      max-width: 240px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(233,30,140,.32);
+      background: radial-gradient(circle at 0% 0%, rgba(233,30,140,.28), transparent 55%), rgba(8,2,18,.9);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      overflow: hidden;
+    }
+    .hero-visual-pill-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+    .hero-visual-pill::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      bottom: -18px;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,.5), transparent 65%);
+      opacity: .35;
+      pointer-events: none;
+    }
+
     .hero-cta-wrap {
       display: flex;
       flex-direction: column;
@@ -551,6 +596,7 @@
     .pb-main sub { font-size: 28px; }
     .pb-or   { font-size: 14px; color: var(--muted); margin: 14px 0 6px; }
     .pb-pix  { font-size: 22px; font-weight: 800; margin-bottom: 32px; }
+    .inline-price { white-space: nowrap; }
     .trust-row {
       display: flex; justify-content: center;
       gap: 20px; flex-wrap: wrap;
@@ -602,7 +648,7 @@
 ===================== -->
 <div id="sticky">
   <div class="st">
-    <strong>Xeque-Mate na Cama</strong> — 12x de R$20,47 ou R$197 à vista
+    <strong>Xeque-Mate na Cama</strong> — 12x de <span class="inline-price">R$20,47</span> ou R$197 à vista
   </div>
   <a href="#oferta" class="btn btn-pk" style="padding:12px 28px;font-size:14px;">
     ♟️ Quero Acessar Agora
@@ -621,8 +667,7 @@
 
     <h1 class="hero-title">
       Aprenda a fazer um homem<br />
-      gozar como ele <em class="grad-text">nunca gozou</em><br />
-      — mesmo sem experiência
+      gozar como ele <em class="grad-text">nunca gozou</em> — mesmo sem experiência
     </h1>
 
     <p class="hero-sub">
@@ -648,6 +693,21 @@
       </div>
       <div>
         <strong>+19.939</strong> mulheres já são inesquecíveis
+      </div>
+    </div>
+
+    <div class="hero-visual-strip">
+      <div class="hero-visual-pill">
+        <div class="hero-visual-pill-icon">♟️</div>
+        <span>Sequência ilustrada de técnicas para você aplicar sem travar.</span>
+      </div>
+      <div class="hero-visual-pill">
+        <div class="hero-visual-pill-icon">✨</div>
+        <span>Passo a passo visual do que fazer com mãos, boca e quadril.</span>
+      </div>
+      <div class="hero-visual-pill">
+        <div class="hero-visual-pill-icon">🧠</div>
+        <span>Mapas mentais para ancorar o prazer dele em você.</span>
       </div>
     </div>
   </div>
@@ -986,7 +1046,7 @@
       <div class="pb-label">Investimento</div>
       <div class="pb-from">De R$475,70</div>
       <div class="pb-inst">12x de</div>
-      <div class="pb-main"><sup>R$</sup>20<sub>,47</sub></div>
+      <div class="pb-main">R$20,47</div>
       <div class="pb-or">ou</div>
       <div class="pb-pix">R$197 à vista</div>
 
@@ -1012,8 +1072,7 @@
     <div class="fi">
       <div class="divider"></div>
       <h2 class="sec-title" style="max-width:700px;margin:0 auto 20px;">
-        Você não precisa ser perfeita.<br />
-        Você não precisa nascer sabendo.
+        Você não precisa ser perfeita. Você não precisa nascer sabendo.
       </h2>
       <p class="sec-sub" style="margin:0 auto 40px;">
         Você precisa só de um método que funcione.<br />
