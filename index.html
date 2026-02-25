@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" />
 
   <style>
     /* ===========================
@@ -241,7 +242,7 @@
 
     .hero-title {
       font-family: var(--serif);
-      font-size: clamp(38px, 6.5vw, 74px);
+      font-size: clamp(32px, 4.8vw, 60px);
       font-weight: 900;
       line-height: 1.1;
       margin-bottom: 26px;
@@ -535,7 +536,18 @@
       border: 2px solid rgba(233,30,140,.22);
       box-shadow: 0 0 60px rgba(233,30,140,.14);
     }
-    .autora-photo img { width: 100%; height: auto; object-fit: cover; }
+    .autora-photo img { width: 100%; height: auto; object-fit: cover; object-position: 70% 50%; }
+
+    .autora-media-strip {
+      margin-top: 28px;
+      max-width: 360px;
+    }
+    .autora-media-strip img {
+      width: 100%;
+      height: auto;
+      opacity: .9;
+      display: block;
+    }
 
     .autora-bio p { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.85); }
     .cred-list { display: flex; flex-direction: column; gap: 13px; margin: 24px 0; }
@@ -635,6 +647,12 @@
       .method-grid { grid-template-columns: 1fr; }
       .autora-photo { max-width: 340px; margin: 0 auto; }
     }
+    @media (min-width: 821px) {
+      .autora-photo img {
+        height: 460px;
+      }
+    }
+
     @media (max-width: 560px) {
       .hero-trust { flex-direction: column; gap: 8px; }
       .price-box { padding: 32px 22px; }
@@ -666,8 +684,7 @@
     </div>
 
     <h1 class="hero-title">
-      Aprenda a fazer um homem<br />
-      gozar como ele <em class="grad-text">nunca gozou</em> — mesmo sem experiência
+      Aprenda a fazer um homem gozar como ele <em class="grad-text">nunca gozou</em> — mesmo sem experiência
     </h1>
 
     <p class="hero-sub">
@@ -1023,11 +1040,11 @@
           "Com uma comunidade de 25 mil alunas, Larissa prova que o prazer
           é o caminho para retomar as rédeas da própria vida."
         </p>
-      </div>
-    </div>
 
-    <div class="media-img fi">
-      <img src="brand-assets/larissa/logos.png" alt="Logos dos programas em que Larissa Oliveira já participou" loading="lazy" />
+        <div class="autora-media-strip">
+          <img src="brand-assets/larissa/logos.png" alt="Logos dos programas em que Larissa Oliveira já participou" loading="lazy" />
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1053,7 +1070,7 @@
       <div class="pb-or">ou</div>
       <div class="pb-pix">R$197 à vista</div>
 
-      <a href="#" class="btn btn-pk btn-lg btn-full" style="margin-bottom:12px;">
+      <a href="https://payfast.greenn.com.br/8fsy3p7/offer/yV43w5?cupom=LARIFLIX&amp;ch_id=135537&amp;b_id_1=pqb785u&amp;b_offer_1=xk2Pvj&amp;b_id_2=mfgaqmh&amp;b_offer_2=DnBEfk" class="btn btn-pk btn-lg btn-full" style="margin-bottom:12px;">
         ♟️ Quero Dar o Xeque-Mate Agora
       </a>
       <p style="font-size:13px;color:var(--muted);">Você será direcionada para a página de pagamento segura</p>
