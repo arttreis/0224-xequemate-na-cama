@@ -1020,6 +1020,244 @@
         padding: 32px 22px;
       }
     }
+
+    /* ===========================
+       GRAIN TEXTURE OVERLAY
+    =========================== */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.028;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ===========================
+       EYEBROW — LINHAS DECORATIVAS
+    =========================== */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .eyebrow::before,
+    .eyebrow::after {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    /* ===========================
+       HERO BADGE — SHIMMER
+    =========================== */
+    @keyframes badge-shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    .hero-badge {
+      background: linear-gradient(
+        105deg,
+        rgba(233, 30, 140, .07) 0%,
+        rgba(233, 30, 140, .24) 45%,
+        rgba(233, 30, 140, .07) 100%
+      );
+      background-size: 200% auto;
+      animation: badge-shimmer 5s linear infinite;
+    }
+
+    /* ===========================
+       AVATARS — RING GLOW
+    =========================== */
+    .hero-avatars span {
+      box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px rgba(233, 30, 140, .38);
+    }
+
+    /* ===========================
+       HERO — DIVISOR INFERIOR
+    =========================== */
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(233, 30, 140, .3), transparent);
+      pointer-events: none;
+    }
+
+    /* ===========================
+       STICKY — BORDA GRADIENT
+    =========================== */
+    #sticky {
+      border-top: 1px solid transparent;
+      background:
+        linear-gradient(rgba(8, 2, 18, .97), rgba(8, 2, 18, .97)) padding-box,
+        linear-gradient(135deg, #e91e8c 0%, #7c3aed 100%) border-box;
+    }
+
+    /* ===========================
+       METHOD CARD — TOP REVEAL
+    =========================== */
+    .method-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .method-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--grad);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .45s ease;
+    }
+    .method-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* ===========================
+       SECTION — ACCENT LIGHTS
+    =========================== */
+    #para-quem {
+      background:
+        radial-gradient(ellipse 70% 50% at 0% 100%, rgba(124, 58, 237, .09) 0%, transparent 65%),
+        var(--bg2);
+    }
+    #metodo {
+      background:
+        radial-gradient(ellipse 55% 55% at 100% 50%, rgba(233, 30, 140, .08) 0%, transparent 65%),
+        var(--bg);
+    }
+    #bonuses {
+      background:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(233, 30, 140, .07) 0%, transparent 65%),
+        var(--bg3);
+    }
+    #cta-final {
+      background:
+        radial-gradient(ellipse 75% 55% at 50% 50%, rgba(233, 30, 140, .1) 0%, transparent 70%),
+        radial-gradient(ellipse 55% 40% at 50% 100%, rgba(124, 58, 237, .13) 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, #0a0318 100%);
+    }
+
+    /* ===========================
+       BONUS CARD — SHINE ON HOVER
+    =========================== */
+    .bonus-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .bonus-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, .045), transparent);
+      transform: skewX(-15deg);
+      transition: left .55s ease;
+    }
+    .bonus-card:hover::after {
+      left: 130%;
+    }
+
+    /* ===========================
+       CARD-PK — GLOW ON HOVER
+    =========================== */
+    .card-pk {
+      transition: box-shadow .35s, transform .35s;
+    }
+    .card-pk:hover {
+      box-shadow: 0 8px 52px rgba(233, 30, 140, .15);
+      transform: translateY(-4px);
+    }
+
+    /* ===========================
+       PRICE BOX — RIBBON + FIX
+    =========================== */
+    .price-box {
+      position: relative;
+      overflow: hidden;
+    }
+    .price-box::before {
+      content: 'OFERTA ESPECIAL';
+      position: absolute;
+      top: 28px;
+      right: -36px;
+      background: var(--grad);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 6px 54px;
+      transform: rotate(45deg);
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    /* ===========================
+       AUTORA QUOTE — LARGE MARK
+    =========================== */
+    .autora-quote {
+      position: relative;
+    }
+    .autora-quote::before {
+      content: '\201C';
+      position: absolute;
+      top: -22px;
+      left: 6px;
+      font-family: var(--serif);
+      font-size: 84px;
+      line-height: 1;
+      color: var(--pink);
+      opacity: 0.14;
+      pointer-events: none;
+    }
+
+    /* ===========================
+       GARANTIA — BADGE
+    =========================== */
+    .guarantee-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(34, 197, 94, .25);
+      background: rgba(34, 197, 94, .06);
+      font-size: 13px;
+      color: rgba(255, 255, 255, .7);
+    }
+    .guarantee-badge strong {
+      color: #4ade80;
+    }
+
+    /* ===========================
+       VSL FRAME — LABEL
+    =========================== */
+    .hero-vsl-frame::before {
+      content: '▶  APRESENTAÇÃO EXCLUSIVA';
+      display: block;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--pink-light);
+      margin-bottom: 12px;
+      opacity: 0.75;
+    }
   </style>
 </head>
 
@@ -1420,6 +1658,12 @@
           <div class="trust-item">🔒 Compra segura</div>
           <div class="trust-item">⚡ Acesso imediato</div>
           <div class="trust-item">👁️ Fatura discreta</div>
+        </div>
+
+        <div style="display:flex;justify-content:center;">
+          <div class="guarantee-badge">
+            🛡️ <strong>Garantia de 7 dias</strong> — risco zero, devolução total
+          </div>
         </div>
       </div>
     </div>
