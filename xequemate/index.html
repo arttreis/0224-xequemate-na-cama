@@ -31,7 +31,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="icon" type="image/png" href="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" />
+  <link rel="icon" type="image/png" href="../brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" />
 
   <style>
     /* ===========================
@@ -376,49 +376,64 @@
       font-size: clamp(16px, 2.2vw, 21px);
       color: rgba(255, 255, 255, .75);
       max-width: 640px;
-      margin: 0 auto 40px;
+      margin: 0 auto 48px;
       line-height: 1.65;
     }
 
-    /* ===========================
-       VSL VIDEO FRAME
-    =========================== */
-    .hero-vsl-frame {
-      margin: 0 auto 40px;
-      max-width: 760px;
-      width: 100%;
+    .hero-visual-strip {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    .hero-vsl-box {
+    .hero-visual-pill {
       position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      border-radius: 20px;
+      min-width: 180px;
+      max-width: 240px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(233, 30, 140, .32);
+      background: radial-gradient(circle at 0% 0%, rgba(233, 30, 140, .28), transparent 55%), rgba(8, 2, 18, .9);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
       overflow: hidden;
-      background: #000;
-      box-shadow:
-        0 0 0 1px rgba(233, 30, 140, .28),
-        0 24px 80px rgba(0, 0, 0, .7),
-        0 0 60px rgba(233, 30, 140, .12);
     }
 
-    .hero-vsl-box iframe {
+    .hero-visual-pill-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .hero-visual-pill::after {
+      content: '';
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+      right: -20px;
+      bottom: -18px;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 58, 237, .5), transparent 65%);
+      opacity: .35;
+      pointer-events: none;
     }
 
-    /* ===========================
-       HERO CTA
-    =========================== */
     .hero-cta-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 56px;
     }
 
     .hero-trust {
@@ -1260,22 +1275,6 @@
     .guarantee-badge strong {
       color: #4ade80;
     }
-
-    /* ===========================
-       VSL FRAME — LABEL
-    =========================== */
-    .hero-vsl-frame::before {
-      content: '▶  APRESENTAÇÃO EXCLUSIVA';
-      display: block;
-      text-align: center;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--pink-light);
-      margin-bottom: 12px;
-      opacity: 0.75;
-    }
   </style>
 </head>
 
@@ -1313,18 +1312,6 @@
         sexy ou experiente.
       </p>
 
-      <!-- VSL VIDEO FRAME — substitua o src pelo embed do seu vídeo -->
-      <div class="hero-vsl-frame fi d1">
-        <div class="hero-vsl-box">
-          <iframe
-            src=""
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-
       <div class="hero-cta-wrap">
         <a href="#oferta" class="btn btn-pk btn-lg">
           ♟️ Quero Dar o Xeque-Mate Agora
@@ -1342,6 +1329,21 @@
         </div>
         <div>
           <strong>+19.939</strong> mulheres já são inesquecíveis
+        </div>
+      </div>
+
+      <div class="hero-visual-strip">
+        <div class="hero-visual-pill">
+          <div class="hero-visual-pill-icon">♟️</div>
+          <span>Sequência ilustrada de técnicas para você aplicar sem travar.</span>
+        </div>
+        <div class="hero-visual-pill">
+          <div class="hero-visual-pill-icon">✨</div>
+          <span>Passo a passo visual do que fazer com mãos, boca e quadril.</span>
+        </div>
+        <div class="hero-visual-pill">
+          <div class="hero-visual-pill-icon">🧠</div>
+          <span>Mapas mentais para ancorar o prazer dele em você.</span>
         </div>
       </div>
     </div>
@@ -1455,7 +1457,7 @@
       <div class="test-photos fi" style="grid-template-columns: 1fr;">
         <figure class="test-photo"
           style="display: flex; justify-content: center; background: transparent; border: none;">
-          <img src="brand-assets/depoimentos/oooo.png" alt="Coletânea de prints reais de depoimentos e conversas"
+          <img src="../brand-assets/depoimentos/oooo.png" alt="Coletânea de prints reais de depoimentos e conversas"
             loading="lazy" style="border-radius: var(--r-xl); max-width: 100%; height: auto;" />
         </figure>
       </div>
@@ -1593,7 +1595,7 @@
       <div class="text-center fi">
         <span class="eyebrow">Quem vai te ensinar</span>
         <h2 class="sec-title" style="display:inline-flex;align-items:center;gap:10px;">
-          <img src="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Ícone da marca Larissa Oliveira" loading="lazy"
+          <img src="../brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Ícone da marca Larissa Oliveira" loading="lazy"
             style="height:32px;width:auto;display:inline-block;" />
           Larissa Oliveira
         </h2>
@@ -1602,7 +1604,7 @@
       <div class="autora-grid">
         <div class="autora-photo fi">
           <img
-            src="brand-assets/larissa/u3689439628_a_grand_golden_hall_illuminated_by_soft_blue_ligh_4baacec9-2951-4006-ba7b-18740602a6ec_3 (1) 2.png"
+            src="../brand-assets/larissa/u3689439628_a_grand_golden_hall_illuminated_by_soft_blue_ligh_4baacec9-2951-4006-ba7b-18740602a6ec_3 (1) 2.png"
             alt="Larissa Oliveira em ambiente elegante, como Sexóloga e SexyCoach" loading="lazy" />
         </div>
 
@@ -1637,7 +1639,7 @@
           </p>
 
           <div class="autora-media-strip">
-            <img src="brand-assets/larissa/logos.png" alt="Logos dos programas em que Larissa Oliveira já participou"
+            <img src="../brand-assets/larissa/logos.png" alt="Logos dos programas em que Larissa Oliveira já participou"
               loading="lazy" />
           </div>
         </div>
@@ -1717,7 +1719,7 @@
   <footer>
     <p>
       <span style="display:inline-flex;align-items:center;gap:8px;">
-        <img src="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Ícone da marca Larissa Oliveira" loading="lazy"
+        <img src="../brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Ícone da marca Larissa Oliveira" loading="lazy"
           style="height:18px;width:auto;display:inline-block;" />
         <strong style="color:rgba(255,255,255,.55);">Larissa Oliveira</strong>
       </span><br />
