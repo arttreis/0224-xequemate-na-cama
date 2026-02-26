@@ -5,6 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Larissa Oliveira — LPs</title>
+  <meta name="description" content="Landing pages da Larissa Oliveira — Xeque-Mate na Cama." />
+  <meta name="theme-color" content="#e91e8c" />
+  <meta property="og:title" content="Larissa Oliveira — Landing Pages" />
+  <meta property="og:description" content="Acesse as páginas de vendas da Larissa Oliveira." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Larissa Oliveira — Landing Pages" />
   <link rel="icon" type="image/png" href="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" />
 
   <!-- Meta Pixel Code -->
@@ -40,6 +47,7 @@
     .container {
       text-align: center;
       padding: 48px 24px;
+      width: 100%;
     }
 
     .logo {
@@ -74,7 +82,7 @@
       text-decoration: none;
       font-size: 14px;
       letter-spacing: .04em;
-      min-width: 280px;
+      width: min(280px, calc(100vw - 48px));
       transition: border-color .2s, background .2s;
     }
 
@@ -94,10 +102,11 @@
 </head>
 
 <body>
-  <div class="container">
-    <img src="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Larissa Oliveira" class="logo" />
+  <main class="container">
+    <img src="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Larissa Oliveira" class="logo"
+      width="48" height="48" />
     <h1>Larissa Oliveira — Landing Pages</h1>
-    <div class="lps">
+    <nav class="lps" aria-label="Landing pages disponíveis">
       <a href="/xequemate" class="lp-link">
         Xeque-Mate na Cama
         <span>/xequemate</span>
@@ -106,8 +115,8 @@
         Xeque-Mate na Cama — VSL
         <span>/xequemate-vsl</span>
       </a>
-    </div>
-  </div>
+    </nav>
+  </main>
 </body>
 
 </html>
