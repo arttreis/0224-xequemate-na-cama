@@ -708,6 +708,104 @@
       .btn   { padding: 16px 24px; font-size: 14px; letter-spacing: .5px; }
       .trust { gap: 12px; font-size: 12px; }
     }
+
+    /* ===========================
+       DOBRA COPY SECTIONS
+    =========================== */
+    .dobra-headline {
+      font-family: var(--serif);
+      font-size: clamp(22px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.35;
+      max-width: 720px;
+      margin: 0 auto 24px;
+    }
+
+    .dobra-imagine {
+      font-size: clamp(17px, 2.5vw, 22px);
+      line-height: 1.6;
+      color: rgba(255,255,255,.85);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .dobra-gatona {
+      font-family: var(--serif);
+      font-size: clamp(20px, 3.5vw, 34px);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.3;
+      color: var(--pink-light);
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+
+    .dobra-copy {
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.75;
+      color: rgba(255,255,255,.85);
+      max-width: 660px;
+      margin: 0 auto 20px;
+    }
+
+    .dobra-lead {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 700;
+      line-height: 1.3;
+      max-width: 680px;
+      margin: 0 auto 40px;
+    }
+
+    .vantagens-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .vantagem-item {
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border-pk);
+      border-radius: var(--r-xl);
+      padding: 28px 32px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .vantagem-num {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      flex-shrink: 0;
+      min-width: 48px;
+    }
+
+    .vantagem-titulo {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .vantagem-item > div > p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 560px) {
+      .vantagem-item { flex-direction: column; gap: 12px; }
+      .vantagem-num  { font-size: 32px; }
+    }
   </style>
 </head>
 
@@ -724,10 +822,12 @@
         Aula exclusiva — assista agora
       </div>
 
-      <h1 class="hero-title">
-        O Segredo da<br />
-        <em class="grad-text">Técnica de Mão Dupla</em>
+      <h1 class="dobra-headline">
+        Com as técnicas certas, você pode fazer um homem gozar e sentir um prazer tão intenso, ao ponto das <strong>pernas tremerem</strong> e ele <strong>gemer alto</strong>
       </h1>
+      <p class="dobra-imagine">
+        Agora imagine ser você <span class="grad-text">a primeira mulher na vida dele</span> a fazer isso.
+      </p>
 
       <!-- VIDEO VTURB -->
       <div class="video-wrap">
@@ -761,185 +861,56 @@
 
     </main>
 
-    <!-- SEÇÕES REVELADAS APÓS 9 MIN 30 SEG -->
+    <!-- SEÇÕES REVELADAS APÓS 8 MIN 10 SEG -->
     <div id="reveal-sections">
 
-      <!-- ANTES E DEPOIS -->
-      <section id="transformacao">
-        <div class="container">
-          <div class="text-center">
-            <span class="eyebrow">A transformação</span>
-            <h2 class="sec-title">
-              Sua vida <span class="grad-text">antes e depois</span><br />
-              da Técnica de Mão Dupla
-            </h2>
-          </div>
-
-          <div class="ba-grid">
-            <div class="ba-card ba-before">
-              <div class="ba-label">✕ &nbsp;Antes</div>
-              <ul>
-                <li>Fica insegura na hora H</li>
-                <li>Se compara com outras mulheres</li>
-                <li>Não sabe se ele realmente sente prazer</li>
-                <li>Tem medo de não ser "boa o suficiente"</li>
-                <li>Faz sexo, mas não cria impacto</li>
-                <li>Sente que ele esfria rápido</li>
-                <li>Vive tentando adivinhar o que ele gosta</li>
-              </ul>
-            </div>
-
-            <div class="ba-card ba-after">
-              <div class="ba-label">✓ &nbsp;Depois</div>
-              <ul>
-                <li>Para de se comparar com outras mulheres</li>
-                <li>Vê ele reagir de um jeito diferente</li>
-                <li>Sabe o que fazer e quando fazer</li>
-                <li>Se sente mais confiante e segura na cama</li>
-                <li>Percebe que ele te procura mais</li>
-                <li>Nota mais desejo, atenção e presença</li>
-                <li>Entende o que faz um homem perder o controle</li>
-              </ul>
-            </div>
-          </div>
+      <!-- DOBRA 2: GATONA / LIPO -->
+      <section id="dobra2">
+        <div class="container text-center">
+          <p class="dobra-gatona">Gatona, enquanto você pesquisa o preço da lipo, o boy que você quer tá ficando com a feia que <em>tr4nsa gostoso</em></p>
+          <p class="dobra-copy">A verdade é que, por mais que um corpo e rosto bonito atraiam um homem, <strong>NADA se compara</strong> a saber dar prazer pra ele na cama.</p>
+          <p class="dobra-copy">Saber cativar um homem desde o primeiro contato até as 4 paredes, é o que <strong>REALMENTE</strong> vai fazer ele ficar viciado em você.</p>
         </div>
       </section>
 
-      <!-- TUDO QUE ENTRA -->
-      <section id="bonuses">
+      <!-- DOBRA 3: VANTAGENS -->
+      <section id="dobra3" style="background: var(--bg3);">
         <div class="container">
-          <div class="text-center">
-            <span class="eyebrow">O que você recebe</span>
-            <h2 class="sec-title">
-              Tudo que entra quando você<br />
-              <span class="grad-text">der o Xeque-Mate</span>
-            </h2>
-            <p class="sec-sub" style="margin:0 auto;">
-              Nada de linguagem difícil e teoria confusa. Vídeo aulas diretas, explícitas e sem enrolação.
-              Como aplicar, o que fazer e quando usar cada técnica.
-            </p>
-          </div>
-
-          <div class="bonus-grid">
-            <div class="bonus-card">
-              <span class="tag">Principal</span>
-              <h3>Xeque-Mate na Cama</h3>
-              <p>O treinamento completo. Todas as técnicas em vídeo aulas diretas e explícitas.</p>
-              <div class="bonus-price">Incluído</div>
-            </div>
-            <div class="bonus-card">
-              <span class="tag">Bônus</span>
-              <h3>Mãos de Fada</h3>
-              <p>Técnicas de estímulo manual que ele nunca vai esquecer.</p>
-              <div class="bonus-price">R$97,90 — grátis</div>
-            </div>
-            <div class="bonus-card">
-              <span class="tag">Bônus</span>
-              <h3>Rainha do Boquete</h3>
-              <p>+20 técnicas de oral para se tornar referência absoluta.</p>
-              <div class="bonus-price">R$97,90 — grátis</div>
-            </div>
-            <div class="bonus-card">
-              <span class="tag">Bônus</span>
-              <h3>Rainha da Sentada Inesquecível</h3>
-              <p>Prazer que cria memória. Ele vai pensar em você toda vez.</p>
-              <div class="bonus-price">R$97,90 — grátis</div>
-            </div>
-            <div class="bonus-card">
-              <span class="tag">Bônus</span>
-              <h3>Segredos do Prazer Anal</h3>
-              <p>Prazer intenso e sem dor. Guia completo sem tabus.</p>
-              <div class="bonus-price">R$97,90 — grátis</div>
-            </div>
-            <div class="bonus-card">
-              <span class="tag">Bônus</span>
-              <h3>SexZap</h3>
-              <p>Frases que entram na cabeça dele e não saem mais.</p>
-              <div class="bonus-price">R$29,90 — grátis</div>
-            </div>
-            <div class="bonus-card">
-              <span class="tag">Bônus</span>
-              <h3>Mapa do Prazer</h3>
-              <p>Descubra as fantasias ocultas dele e como usá-las a seu favor.</p>
-              <div class="bonus-price">R$29,90 — grátis</div>
-            </div>
-            <div class="bonus-card">
-              <span class="tag">Bônus</span>
-              <h3>Contos Eróticos Selecionados</h3>
-              <p>Mais segurança, repertório e inspiração pra você.</p>
-              <div class="bonus-price">R$27,90 — grátis</div>
-            </div>
-          </div>
-
-          <div class="total-box">
-            <p class="val-label">Valor total de tudo isso:</p>
-            <p class="val-old">R$475,70</p>
-            <p class="val-cta">Hoje, somente nessa página, por muito menos ↓</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- QUEM É LARISSA -->
-      <section id="autora">
-        <div class="container">
-          <div class="text-center">
-            <span class="eyebrow">Quem vai te ensinar</span>
-            <h2 class="sec-title" style="display:inline-flex;align-items:center;gap:10px;">
-              <img src="../brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Ícone da marca Larissa Oliveira"
-                loading="lazy" style="height:32px;width:auto;display:inline-block;" />
-              Larissa Oliveira
-            </h2>
-          </div>
-
-          <div class="autora-grid">
-            <div class="autora-photo">
-              <img
-                src="../brand-assets/larissa/u3689439628_a_grand_golden_hall_illuminated_by_soft_blue_ligh_4baacec9-2951-4006-ba7b-18740602a6ec_3 (1) 2.png"
-                alt="Larissa Oliveira em ambiente elegante, como Sexóloga e SexCoach" loading="lazy" />
-            </div>
-
-            <div class="autora-bio">
-              <p>
-                Após crescer sob repressão e enfrentar tabus que a impediam de sentir prazer
-                até os 19 anos, Larissa Oliveira transformou sua jornada de autodescoberta em missão.
-                Empresária na área de SexShop e hoje pós-graduada em Sexologia e SexCoach,
-                ela dedica sua carreira a levar informação e liberdade para mulheres.
-                Com uma comunidade de 25 mil alunas, Larissa prova que o prazer
-                é o caminho para retomar as rédeas da própria vida.
-              </p>
-
-              <div class="cred-list">
-                <div class="cred-item">
-                  <div class="cred-dot"></div><span>+25 mil alunas na Lariflix</span>
-                </div>
-                <div class="cred-item">
-                  <div class="cred-dot"></div><span>+10 mil casamentos salvos</span>
-                </div>
-                <div class="cred-item">
-                  <div class="cred-dot"></div><span>+60 eventos em todo o Brasil</span>
-                </div>
-                <div class="cred-item">
-                  <div class="cred-dot"></div><span>Presença na mídia: SBT, Band, Jovem Pan e mais</span>
-                </div>
+          <p class="dobra-lead text-center">Ser uma mulher inesquecível tem vantagens quase desleais:</p>
+          <div class="vantagens-list">
+            <div class="vantagem-item">
+              <div class="vantagem-num">01</div>
+              <div>
+                <h3 class="vantagem-titulo">Poder de Escolha</h3>
+                <p>esquece ficar com "o que dá", e veja o homem dos seus sonhos te perguntando se você tá livre pra uma viagem internacional no mês que vem.</p>
               </div>
-
-              <div class="autora-media-strip">
-                <img src="../brand-assets/larissa/logos.png"
-                  alt="Logos dos programas em que Larissa Oliveira já participou" loading="lazy" />
+            </div>
+            <div class="vantagem-item">
+              <div class="vantagem-num">02</div>
+              <div>
+                <h3 class="vantagem-titulo">Confiança Invejável</h3>
+                <p>insegurança não vai ser mais uma palavra do seu dicionário. A partir de agora você verá homens se perguntando se "será que eu vou dar conta?".</p>
+              </div>
+            </div>
+            <div class="vantagem-item">
+              <div class="vantagem-num">03</div>
+              <div>
+                <h3 class="vantagem-titulo">Repertório Sexual PRO</h3>
+                <p>técnicas que apenas sexólogas com anos de estudo dominam. Pra fazer um homem DELIRAR de prazer de "n" formas possíveis.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- OFERTA -->
+      <!-- OFERTA ESPECIAL -->
       <section id="oferta">
         <div class="container">
           <div class="text-center">
             <span class="eyebrow">Oferta especial</span>
-            <h2 class="sec-title">Hoje, somente nessa página</h2>
+            <h2 class="sec-title">Pronta pra deixar de ser <span class="grad-text">"Só mais uma"?</span></h2>
             <p class="sec-sub" style="margin:0 auto;">
-              Você recebe o treinamento completo + todos os 7 bônus por:
+              Somente HOJE, nesta página, o treinamento completo + 7 bônus, serão seus por apenas:
             </p>
           </div>
 
@@ -969,6 +940,27 @@
                 🛡️ <strong>Garantia de 7 dias</strong> — risco zero, devolução total
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VOCÊ NÃO PRECISA SER PERFEITA -->
+      <section id="nao-perfeita" style="background: var(--bg2);">
+        <div class="container text-center">
+          <h2 class="sec-title" style="max-width:700px;margin:0 auto 20px;">
+            A vida toda você foi ensinada a ser comportada. <span class="grad-text">Agora está na hora de mostrar uma nova versão entre 4 paredes</span>
+          </h2>
+          <p class="sec-sub" style="margin:0 auto 40px;">
+            Com esse método, eu te <strong>GARANTO</strong> que ele vai até esquecer da existência do Xvideos
+          </p>
+          <a href="https://payfast.greenn.com.br/8fsy3p7/offer/yV43w5?cupom=LARIFLIX&amp;ch_id=135537&amp;b_id_1=pqb785u&amp;b_offer_1=xk2Pvj&amp;b_id_2=mfgaqmh&amp;b_offer_2=DnBEfk"
+            class="btn" onclick="fbq('track', 'InitiateCheckout');">
+            ♟️ Quero aprender mais técnicas agora
+          </a>
+          <div class="trust">
+            <span>🔒 Compra 100% segura</span>
+            <span>⚡ Acesso imediato</span>
+            <span>👁️ Discrição total na fatura</span>
           </div>
         </div>
       </section>
