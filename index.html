@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '661630316482683');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=661630316482683&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+
+  <title>Larissa Oliveira | Sexóloga</title>
+  <meta name="description" content="Sexóloga especialista em prazer feminino. Cursos, conteúdos e muito mais." />
+  <link rel="icon" type="image/png" href="brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:    #6495ed;
+      --blue-dk: #4a7fd4;
+      --pink:    #e91e8c;
+      --white:   #ffffff;
+      --off:     #f4f6fb;
+      --text:    #1a1a2e;
+      --muted:   #6b7280;
+      --border:  #e5e7eb;
+      --r:       14px;
+      --font:    'Poppins', system-ui, sans-serif;
+      --shadow:  0 2px 16px rgba(100,149,237,.13);
+      --shadow-h:0 8px 32px rgba(100,149,237,.22);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--off);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      width: 100%;
+      max-height: 538px;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .hero img {
+      width: 100%;
+      height: 538px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* ── CONTAINER ── */
+    .page {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 32px 16px 80px;
+    }
+
+    /* ── PROFILE ── */
+    .profile {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .profile__name {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -.3px;
+      margin-bottom: 4px;
+    }
+    .profile__title {
+      font-size: .9rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── LINK CARDS ── */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1.5px solid var(--border);
+      padding: 16px 18px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .link-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--blue);
+      border-radius: 4px 0 0 4px;
+    }
+    .link-card.pink::before  { background: var(--pink); }
+    .link-card.green::before { background: #25d366; }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-h);
+      border-color: var(--blue);
+    }
+    .link-card.pink:hover  { border-color: var(--pink); }
+    .link-card.green:hover { border-color: #25d366; }
+
+    .link-card__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #eef2fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .link-card.pink  .link-card__icon { background: #fce8f3; }
+    .link-card.green .link-card__icon { background: #e6f9ee; }
+
+    .link-card__text { flex: 1; min-width: 0; }
+    .link-card__label {
+      font-size: .92rem;
+      font-weight: 600;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .link-card__sub {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 2px;
+      display: block;
+    }
+
+    .link-card__arrow {
+      color: var(--muted);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 4px 0;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: .72rem;
+      color: var(--muted);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 480px) {
+      .hero img {
+        height: 257px;
+      }
+      .page {
+        padding: 24px 14px 60px;
+      }
+      .link-card {
+        padding: 14px 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO BANNER -->
+  <div class="hero">
+    <img src="brand-assets/Banner.png" alt="Larissa Oliveira — Sexóloga" />
+  </div>
+
+  <div class="page">
+
+    <!-- PROFILE -->
+    <div class="profile">
+      <p class="profile__name">Larissa Oliveira</p>
+      <p class="profile__title">Sexóloga · Especialista em Prazer Feminino</p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="links">
+
+      <!-- 1. LARIFLIX -->
+      <a class="link-card"
+         href="https://payfast.greenn.com.br/8fsy3p7/offer/yV43w5?cupom=LARIFLIX&ch_id=135537&b_id_1=pqb785u&b_offer_1=xk2Pvj&b_id_2=mfgaqmh&b_offer_2=DnBEfk"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">🎓</div>
+        <div class="link-card__text">
+          <span class="link-card__label">LARIFLIX — Acesse o Curso</span>
+          <span class="link-card__sub">Com cupom LARIFLIX + bônus exclusivos</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <!-- 2. Formulário SpotForm -->
+      <a class="link-card"
+         href="https://form.spotform.com.br"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">📝</div>
+        <div class="link-card__text">
+          <span class="link-card__label">Formulário de Contato</span>
+          <span class="link-card__sub">Envie sua mensagem para mim</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <!-- 3. WhatsApp Direto -->
+      <a class="link-card green"
+         href="https://wa.me/5518996462556?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Larissa"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">💬</div>
+        <div class="link-card__text">
+          <span class="link-card__label">WhatsApp — Falar com Larissa</span>
+          <span class="link-card__sub">Tire suas dúvidas diretamente</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <div class="divider">Produtos</div>
+
+      <!-- 4. Oferta 2 -->
+      <a class="link-card pink"
+         href="https://payfast.greenn.com.br/g92kd5p"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">💎</div>
+        <div class="link-card__text">
+          <span class="link-card__label">Produto Especial</span>
+          <span class="link-card__sub">Acesse a oferta exclusiva</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <!-- 5. Oferta 3 -->
+      <a class="link-card pink"
+         href="https://payfast.greenn.com.br/fn2tzcy"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">✨</div>
+        <div class="link-card__text">
+          <span class="link-card__label">Oferta Exclusiva</span>
+          <span class="link-card__sub">Aproveite enquanto dura</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <!-- 6. Oferta 4 -->
+      <a class="link-card pink"
+         href="https://payfast.greenn.com.br/np8ge5d"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">🔥</div>
+        <div class="link-card__text">
+          <span class="link-card__label">Método Premium</span>
+          <span class="link-card__sub">Transforme sua vida íntima</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <!-- 7. Oferta 5 -->
+      <a class="link-card pink"
+         href="https://payfast.greenn.com.br/5t7dszp"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">💫</div>
+        <div class="link-card__text">
+          <span class="link-card__label">Programa Avançado</span>
+          <span class="link-card__sub">Leve sua experiência ao próximo nível</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <!-- 8. Oferta 6 / Xeque-Mate -->
+      <a class="link-card pink"
+         href="https://payfast.greenn.com.br/mfgaqmh"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">♟️</div>
+        <div class="link-card__text">
+          <span class="link-card__label">Xeque-Mate na Cama</span>
+          <span class="link-card__sub">O método completo de prazer feminino</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+      <div class="divider">Suporte</div>
+
+      <!-- 9. WhatsApp Suporte -->
+      <a class="link-card green"
+         href="https://wa.me/5518996462556?text=Oi%2C%20equipe!%20Sou%20aluna%20e%20preciso%20de%20ajuda"
+         target="_blank" rel="noopener">
+        <div class="link-card__icon">🎧</div>
+        <div class="link-card__text">
+          <span class="link-card__label">Suporte para Alunas</span>
+          <span class="link-card__sub">Equipe disponível para te ajudar</span>
+        </div>
+        <span class="link-card__arrow">›</span>
+      </a>
+
+    </div><!-- /links -->
+
+    <div class="footer">
+      © Larissa Oliveira · Todos os direitos reservados
+    </div>
+
+  </div><!-- /page -->
+
+</body>
+</html>
