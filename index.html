@@ -93,12 +93,19 @@
     }
     .hero__content {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(1020px, 100%);
+      height: 45%;
       object-fit: contain;
-      object-position: center;
+      object-position: left center;
+      padding-left: 16px;
       display: block;
+    }
+
+    @media (min-width: 481px) {
+      .hero__content { padding-left: 24px; }
     }
 
     /* ── CONTAINER ── */
