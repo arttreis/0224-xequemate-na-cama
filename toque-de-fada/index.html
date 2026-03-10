@@ -419,6 +419,29 @@
       flex-shrink: 0;
     }
 
+    /* Para Você — full width */
+    .para-voce-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .para-voce-inner h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .para-voce-inner p {
+      font-size: 16px;
+      color: rgba(255,255,255,.8);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .para-voce-inner .highlights {
+      justify-content: center;
+    }
+
     /* ===========================
        HIGHLIGHTS PILLS
     =========================== */
@@ -485,16 +508,20 @@
     .carousel-slide {
       flex: 0 0 auto;
       width: 300px;
+      height: 420px;
       scroll-snap-align: center;
       border-radius: var(--r);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.08);
       background: #160c28;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     @media (max-width: 767px) {
-      .carousel-slide { width: 85vw; }
+      .carousel-slide { width: 85vw; height: 70vw; }
     }
-    .carousel-slide img { width: 100%; height: auto; display: block; }
+    .carousel-slide img { width: 100%; height: 100%; display: block; object-fit: contain; }
     .carousel-btn {
       flex-shrink: 0;
       background: rgba(233,30,140,.15);
@@ -766,7 +793,39 @@
     </div>
   </section>
 
-
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="container">
+      <span class="eyebrow fi">Resultados reais</span>
+      <p class="test-intro fi d1">"Mulheres Como Você Já Estão <strong>Se Tornando Inesquecíveis</strong>"</p>
+      <div class="divider fi d2"></div>
+      <div class="carousel-wrap">
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
+        <div class="carousel-track" id="testimonialCarousel">
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/02f1406.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/4db9cbc.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/5967914.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/5967914%20%281%29.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/6b32a56.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/fb9b9b5.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/fd594d3.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/9123609e-5fa4-47b9-b843-fa7125d362f4%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/b480155b-77af-4741-b984-2bc04e889890%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1009%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1010%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1011%201.png" alt="Depoimento" loading="lazy" /></div>
+        </div>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Próximo">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <p class="test-caption fi" style="margin-top:32px;">"Esses são apenas alguns exemplos do que você vai viver ao entrar para o treinamento e aplicar as técnicas."</p>
+      <div class="cta-wrap" style="margin-top:48px;">
+        <a href="https://payfast.greenn.com.br/redirect/260495" rel="noopener noreferrer" class="btn btn-pk btn-lg fi">
+          ✨ QUERO GARANTIR MINHA VAGA AGORA
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- PREÇO -->
   <section id="preco">
@@ -802,19 +861,14 @@
   <!-- PARA VOCÊ (bloco A) -->
   <section id="para-voce">
     <div class="container">
-      <div class="two-col">
-        <div class="two-col-text fi">
-          <h2>Você está cansada de se sentir insegura no quarto?</h2>
-          <p>Você se preocupa em não estar satisfazendo seu parceiro ou acha que seu próprio corpo está impedindo você de experimentar a intimidade que deseja? Você não está sozinha. Muitas mulheres lutam com medos de inadequação, sentindo que não estão à altura das expectativas de seus parceiros ou até das suas próprias.</p>
-          <p>Mas e se você pudesse transformar essas inseguranças em sua maior arma? E se você pudesse aprender os segredos antigos que farão seu parceiro ver você como a deusa sensual que você realmente é?</p>
-          <p>O curso Ritual Tântrico veio justamente para transformar essas mulheres em deusas — mulheres que estão prontas para tomar o controle de suas vidas íntimas, dominar a arte das técnicas tântricas e criar uma conexão profunda e duradoura com seus parceiros.</p>
-          <div class="highlights">
-            <span class="highlight-pill">MODELOS REAIS</span>
-            <span class="highlight-pill">segredos ancestrais</span>
-          </div>
-        </div>
-        <div class="two-col-img fi d2">
-          <img src="../brand-assets/Banner.png" alt="Mulher confiante" loading="lazy" />
+      <div class="para-voce-inner fi">
+        <h2>Você está cansada de se sentir insegura no quarto?</h2>
+        <p>Você se preocupa em não estar satisfazendo seu parceiro ou acha que seu próprio corpo está impedindo você de experimentar a intimidade que deseja? Você não está sozinha. Muitas mulheres lutam com medos de inadequação, sentindo que não estão à altura das expectativas de seus parceiros ou até das suas próprias.</p>
+        <p>Mas e se você pudesse transformar essas inseguranças em sua maior arma? E se você pudesse aprender os segredos antigos que farão seu parceiro ver você como a deusa sensual que você realmente é?</p>
+        <p>O curso Ritual Tântrico veio justamente para transformar essas mulheres em deusas — mulheres que estão prontas para tomar o controle de suas vidas íntimas, dominar a arte das técnicas tântricas e criar uma conexão profunda e duradoura com seus parceiros.</p>
+        <div class="highlights">
+          <span class="highlight-pill">MODELOS REAIS</span>
+          <span class="highlight-pill">segredos ancestrais</span>
         </div>
       </div>
     </div>
@@ -840,53 +894,19 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
-  <section id="depoimentos">
-    <div class="container">
-      <span class="eyebrow fi">Resultados reais</span>
-      <p class="test-intro fi d1">"Mulheres Como Você Já Estão <strong>Se Tornando Inesquecíveis</strong>"</p>
-      <div class="divider fi d2"></div>
-      <div class="carousel-wrap">
-        <button type="button" class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
-        <div class="carousel-track" id="testimonialCarousel">
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/02f1406.webp" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/4db9cbc.webp" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/5967914.webp" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/5967914%20%281%29.webp" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/6b32a56.webp" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/fb9b9b5.webp" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/fd594d3.webp" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/9123609e-5fa4-47b9-b843-fa7125d362f4%201.png" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/b480155b-77af-4741-b984-2bc04e889890%201.png" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1009%201.png" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1010%201.png" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1011%201.png" alt="Depoimento" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="../brand-assets/depoimentos/oooo.png" alt="Depoimento" loading="lazy" /></div>
-        </div>
-        <button type="button" class="carousel-btn carousel-next" aria-label="Próximo">&#8250;</button>
-      </div>
-      <div class="carousel-dots" id="carouselDots"></div>
-      <p class="test-caption fi" style="margin-top:32px;">"Esses são apenas alguns exemplos do que você vai viver ao entrar para o treinamento e aplicar as técnicas."</p>
-      <div class="cta-wrap" style="margin-top:48px;">
-        <a href="https://payfast.greenn.com.br/redirect/260495" rel="noopener noreferrer" class="btn btn-pk btn-lg fi">
-          ✨ QUERO GARANTIR MINHA VAGA AGORA
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- GARANTIA -->
   <section id="garantia">
     <div class="container">
       <div class="garantia-inner fi">
         <div class="garantia-seal">
-          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="56" fill="none" stroke="#e91e8c" stroke-width="3"/>
-            <circle cx="60" cy="60" r="48" fill="rgba(233,30,140,.08)" stroke="#e91e8c" stroke-width="1" stroke-dasharray="4,4"/>
+          <svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="62" r="56" fill="none" stroke="#e91e8c" stroke-width="3"/>
+            <circle cx="60" cy="62" r="48" fill="rgba(233,30,140,.08)" stroke="#e91e8c" stroke-width="1" stroke-dasharray="4,4"/>
             <text x="60" y="42" text-anchor="middle" fill="#e91e8c" font-size="10" font-weight="700" letter-spacing="2" font-family="Inter,sans-serif">GARANTIA</text>
-            <text x="60" y="68" text-anchor="middle" fill="#ffffff" font-size="32" font-weight="900" font-family="Playfair Display,serif">7</text>
+            <text x="60" y="68" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="900" font-family="Playfair Display,serif">7</text>
             <text x="60" y="82" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700" font-family="Inter,sans-serif">DIAS</text>
-            <text x="60" y="96" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="8" font-family="Inter,sans-serif">100% SATISFAÇÃO</text>
+            <text x="60" y="97" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="8" font-family="Inter,sans-serif">100% SATISFAÇÃO</text>
           </svg>
         </div>
         <h2>Garantia de 7 Dias</h2>
