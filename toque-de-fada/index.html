@@ -321,38 +321,6 @@
       margin: 36px 0 20px;
     }
     /* ===========================
-       PRODUCT IMAGE
-    =========================== */
-    #produto {
-      background: var(--bg2);
-      text-align: center;
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 32px;
-    }
-    @media (max-width: 767px) {
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-      }
-    }
-    .product-card {
-      border-radius: var(--r);
-      overflow: hidden;
-      border: 1px solid var(--border-pk);
-      box-shadow: 0 0 20px rgba(233,30,140,.08);
-      transition: transform .2s, box-shadow .2s;
-    }
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 36px rgba(233,30,140,.22);
-    }
-    .product-card img { width: 100%; height: auto; display: block; }
-
-    /* ===========================
        PRICING
     =========================== */
     #preco {
@@ -798,30 +766,6 @@
     </div>
   </section>
 
-  <!-- PRODUTO (grade de banners) -->
-  <section id="produto">
-    <div class="container">
-      <span class="eyebrow fi">O que você vai receber</span>
-      <div class="products-grid fi">
-        <div class="product-card"><img src="../brand-assets/produtos_banners/TOQUE_DE_SEDA.png" alt="Toque de Seda" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DO_BOQUETE.png" alt="Rainha do Boquete" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DA_SENTADA.png" alt="Rainha da Sentada" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/SEGREDOS_DO_PRAZER_ANAL.png" alt="Segredos do Prazer Anal" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/SEXZAP.png" alt="Sexzap" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/CONTOS_EROTICOS.png" alt="Contos Eróticos" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/FOGO_SECRETO.png" alt="Fogo Secreto" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/SEGREDO_DA_LIBIDO.png" alt="Segredo da Libido" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/MANUAL_DA_SEDUÇÃO.png" alt="Manual da Sedução" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/ZODIACO_DO_SEXO.png" alt="Zodíaco do Sexo" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DO_POMPOARISMO.png" alt="Rainha do Pompoarismo" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/100_POSICOES_PARA_SER_INESQUECIVEL.png" alt="100 Posições" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DO_KAMA_SUTRA.png" alt="Rainha do Kama Sutra" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/QUIZ_5_LINGUAGENS_SEXUAIS.png" alt="Quiz 5 Linguagens Sexuais" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/TECNICA_DA_TOALHA.png" alt="Técnica da Toalha" loading="lazy" /></div>
-        <div class="product-card"><img src="../brand-assets/produtos_banners/MENTORIA_CHAMA_ACESA.png" alt="Mentoria Chama Acesa" loading="lazy" /></div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- PREÇO -->
@@ -903,7 +847,7 @@
       <p class="test-intro fi d1">"Mulheres Como Você Já Estão <strong>Se Tornando Inesquecíveis</strong>"</p>
       <div class="divider fi d2"></div>
       <div class="carousel-wrap">
-        <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
         <div class="carousel-track" id="testimonialCarousel">
           <div class="carousel-slide"><img src="../brand-assets/depoimentos/02f1406.webp" alt="Depoimento" loading="lazy" /></div>
           <div class="carousel-slide"><img src="../brand-assets/depoimentos/4db9cbc.webp" alt="Depoimento" loading="lazy" /></div>
@@ -919,7 +863,7 @@
           <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1011%201.png" alt="Depoimento" loading="lazy" /></div>
           <div class="carousel-slide"><img src="../brand-assets/depoimentos/oooo.png" alt="Depoimento" loading="lazy" /></div>
         </div>
-        <button class="carousel-btn carousel-next" aria-label="Próximo">&#8250;</button>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Próximo">&#8250;</button>
       </div>
       <div class="carousel-dots" id="carouselDots"></div>
       <p class="test-caption fi" style="margin-top:32px;">"Esses são apenas alguns exemplos do que você vai viver ao entrar para o treinamento e aplicar as técnicas."</p>
@@ -1032,9 +976,9 @@
       <img src="https://checkout.payt.com.br/c/LGG8NL?img=pagamentos" alt="Formas de pagamento" loading="lazy" style="margin:0 auto 20px;max-width:340px;opacity:.7;" onerror="this.style.display='none'" />
       <p>
         © 2026 Larissa Oliveira — Todos os direitos reservados<br>
-        <a href="#">Política de Privacidade</a> &nbsp;·&nbsp;
-        <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
-        <a href="#">Suporte</a>
+        <a href="javascript:void(0)">Política de Privacidade</a> &nbsp;·&nbsp;
+        <a href="javascript:void(0)">Termos de Uso</a> &nbsp;·&nbsp;
+        <a href="javascript:void(0)">Suporte</a>
       </p>
       <p style="margin-top:12px;">Este produto é vendido com garantia de satisfação de 7 dias conforme o Código de Defesa do Consumidor.</p>
     </div>
@@ -1103,12 +1047,12 @@
       const slides = track.querySelectorAll('.carousel-slide');
       const total = slides.length;
       let current = 0;
-      let autoTimer;
 
       // Criar dots
       slides.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.type = 'button';
         dot.setAttribute('aria-label', 'Depoimento ' + (i + 1));
         dot.addEventListener('click', () => goTo(i));
         dotsContainer.appendChild(dot);
@@ -1122,7 +1066,7 @@
 
       function goTo(idx) {
         current = (idx + total) % total;
-        slides[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        track.scrollTo({ left: current * (slides[0].offsetWidth + 16), behavior: 'smooth' });
         updateDots(current);
       }
 
@@ -1137,16 +1081,8 @@
       const section = track.closest('#depoimentos');
       const prevBtn = section.querySelector('.carousel-prev');
       const nextBtn = section.querySelector('.carousel-next');
-      if (prevBtn) prevBtn.addEventListener('click', () => { clearInterval(autoTimer); goTo(current - 1); startAuto(); });
-      if (nextBtn) nextBtn.addEventListener('click', () => { clearInterval(autoTimer); goTo(current + 1); startAuto(); });
-
-      // Auto-play
-      function startAuto() {
-        autoTimer = setInterval(() => goTo(current + 1), 3500);
-      }
-      track.addEventListener('mouseenter', () => clearInterval(autoTimer));
-      track.addEventListener('mouseleave', startAuto);
-      startAuto();
+      if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
     })();
 
     // ===========================
