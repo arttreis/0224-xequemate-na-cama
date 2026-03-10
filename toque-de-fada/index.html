@@ -751,13 +751,24 @@
       pointer-events: none;
       z-index: 9999;
     }
+
+    /* ===========================
+       TIMER — oculta dobras por 19min
+    =========================== */
+    .timer-hidden { display: none !important; }
+
+    @keyframes timerFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .timer-visible { animation: timerFadeIn 0.7s ease forwards; }
   </style>
 </head>
 
 <body>
 
   <!-- STICKY BAR -->
-  <div id="sticky">
+  <div id="sticky" class="timer-hidden">
     <div class="st">
       <strong>Toque da Fada</strong> — Oferta especial por tempo limitado
     </div>
@@ -785,7 +796,7 @@
       </div>
 
       <!-- CTA pós-vídeo -->
-      <div class="cta-wrap fi d4">
+      <div class="cta-wrap fi d4 timer-hidden">
         <a href="https://payfast.greenn.com.br/redirect/260495" rel="noopener noreferrer" class="btn btn-pk btn-lg">
           ✨ QUERO GARANTIR MINHA VAGA AGORA
         </a>
@@ -794,7 +805,7 @@
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section id="depoimentos">
+  <section id="depoimentos" class="timer-hidden">
     <div class="container">
       <span class="eyebrow fi">Resultados reais</span>
       <p class="test-intro fi d1">"Mulheres Como Você Já Estão <strong>Se Tornando Inesquecíveis</strong>"</p>
@@ -828,7 +839,7 @@
   </section>
 
   <!-- PREÇO -->
-  <section id="preco">
+  <section id="preco" class="timer-hidden">
     <div class="container text-center">
       <span class="eyebrow fi">Oferta especial</span>
       <h2 class="sec-title fi d1">Invista na sua vida íntima hoje</h2>
@@ -859,7 +870,7 @@
   </section>
 
   <!-- PARA VOCÊ (bloco A) -->
-  <section id="para-voce">
+  <section id="para-voce" class="timer-hidden">
     <div class="container">
       <div class="para-voce-inner fi">
         <h2>Você está cansada de se sentir insegura no quarto?</h2>
@@ -875,7 +886,7 @@
   </section>
 
   <!-- FEITO PARA (bloco B) -->
-  <section id="feito-para">
+  <section id="feito-para" class="timer-hidden">
     <div class="container">
       <div class="two-col reverse">
         <div class="two-col-img fi">
@@ -896,7 +907,7 @@
 
 
   <!-- GARANTIA -->
-  <section id="garantia">
+  <section id="garantia" class="timer-hidden">
     <div class="container">
       <div class="garantia-inner fi">
         <div class="garantia-seal">
@@ -915,7 +926,7 @@
   </section>
 
   <!-- URGÊNCIA -->
-  <section id="urgencia">
+  <section id="urgencia" class="timer-hidden">
     <div class="container">
       <div class="urgency-card fi">
         <h2>⚠️ ENQUANTO VOCÊ PENSA,<br>OUTRA JÁ ESTÁ AGINDO!</h2>
@@ -928,7 +939,7 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq">
+  <section id="faq" class="timer-hidden">
     <div class="container text-center">
       <span class="eyebrow fi">Dúvidas frequentes</span>
       <h2 class="sec-title fi d1">Perguntas e Respostas</h2>
@@ -990,7 +1001,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="timer-hidden">
     <div class="container">
       <img src="https://checkout.payt.com.br/c/LGG8NL?img=pagamentos" alt="Formas de pagamento" loading="lazy" style="margin:0 auto 20px;max-width:340px;opacity:.7;" onerror="this.style.display='none'" />
       <p>
@@ -1117,6 +1128,19 @@
         el.textContent = 'Válido de ' + startDay + ' de ' + months[now.getMonth()] + ' até ' + lastDay + ' de ' + months[now.getMonth()];
       }
     })();
+  </script>
+
+  <!-- TIMER 19 MIN -->
+  <script>
+  (function(){
+    var DELAY = 19 * 60 * 1000; // 19 minutos
+    setTimeout(function(){
+      document.querySelectorAll('.timer-hidden').forEach(function(el){
+        el.classList.remove('timer-hidden');
+        el.classList.add('timer-visible');
+      });
+    }, DELAY);
+  })();
   </script>
 
 </body>
