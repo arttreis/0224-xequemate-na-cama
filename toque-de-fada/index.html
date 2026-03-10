@@ -264,10 +264,15 @@
     }
     .hero-title {
       font-family: var(--serif);
-      font-size: clamp(28px, 4.8vw, 56px);
+      font-size: clamp(24px, 3.5vw, 42px);
       font-weight: 900;
       line-height: 1.1;
       margin-bottom: 16px;
+    }
+    @media (min-width: 768px) {
+      .hero-title {
+        line-height: 1.05;
+      }
     }
     .hero-title em { font-style: italic; }
     .hero-sub {
@@ -315,14 +320,6 @@
       gap: 14px;
       margin: 36px 0 20px;
     }
-    .cta-sub {
-      font-size: 13px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
     /* ===========================
        PRODUCT IMAGE
     =========================== */
@@ -330,51 +327,30 @@
       background: var(--bg2);
       text-align: center;
     }
-    .product-img-wrap {
-      max-width: 500px;
-      margin: 0 auto;
-      border-radius: var(--r-xl);
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    @media (max-width: 767px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+    }
+    .product-card {
+      border-radius: var(--r);
       overflow: hidden;
       border: 1px solid var(--border-pk);
-      box-shadow: 0 0 60px rgba(233,30,140,.12);
+      box-shadow: 0 0 20px rgba(233,30,140,.08);
+      transition: transform .2s, box-shadow .2s;
     }
-    .product-img-wrap img { width: 100%; height: auto; }
-
-    /* ===========================
-       BENEFITS
-    =========================== */
-    #beneficios {
-      background: var(--bg);
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 36px rgba(233,30,140,.22);
     }
-    .benefits-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      max-width: 720px;
-      margin: 40px auto 0;
-    }
-    .benefits-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 16px;
-      line-height: 1.6;
-      color: rgba(255,255,255,.9);
-    }
-    .ic-check {
-      width: 28px; height: 28px;
-      min-width: 28px;
-      border-radius: 50%;
-      background: rgba(110,228,113,.14);
-      color: #6ee471;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 2px;
-    }
+    .product-card img { width: 100%; height: auto; display: block; }
 
     /* ===========================
        PRICING
@@ -518,19 +494,74 @@
       margin-bottom: 40px;
       line-height: 1.4;
     }
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
+    /* Carrossel de depoimentos */
+    .carousel-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-top: 32px;
     }
-    .test-photo {
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 16px;
+      flex: 1;
+      padding-bottom: 4px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-slide {
+      flex: 0 0 auto;
+      width: 300px;
+      scroll-snap-align: center;
       border-radius: var(--r);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.08);
       background: #160c28;
     }
-    .test-photo img { width: 100%; height: auto; display: block; }
+    @media (max-width: 767px) {
+      .carousel-slide { width: 85vw; }
+    }
+    .carousel-slide img { width: 100%; height: auto; display: block; }
+    .carousel-btn {
+      flex-shrink: 0;
+      background: rgba(233,30,140,.15);
+      border: 1px solid var(--border-pk);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-btn:hover { background: rgba(233,30,140,.4); }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .carousel-dot.active {
+      background: var(--pink);
+      transform: scale(1.3);
+    }
     .test-caption {
       font-family: var(--serif);
       font-size: clamp(15px, 2vw, 20px);
@@ -748,11 +779,8 @@
         Método exclusivo para mulheres
       </div>
       <h1 class="hero-title fi d1">
-        Descubra como mulheres comuns estão<br>
-        <em><span class="grad-text">enlouquecendo os homens</span></em><br>
-        com essa técnica
+        Descubra como mulheres comuns estão <em><span class="grad-text">enlouquecendo os homens</span></em> com essa técnica
       </h1>
-      <p class="hero-sub fi d2">Mesmo sendo tímidas</p>
 
       <!-- VSL -->
       <div class="vsl-wrap fi d3">
@@ -766,61 +794,35 @@
         <a href="https://payfast.greenn.com.br/redirect/260495" rel="noopener noreferrer" class="btn btn-pk btn-lg">
           ✨ QUERO GARANTIR MINHA VAGA AGORA
         </a>
-        <span class="cta-sub">
-          🔒 Pagamento 100% seguro &nbsp;|&nbsp; 🎁 Acesso imediato
-        </span>
       </div>
     </div>
   </section>
 
-  <!-- PRODUTO (imagem) -->
+  <!-- PRODUTO (grade de banners) -->
   <section id="produto">
     <div class="container">
       <span class="eyebrow fi">O que você vai receber</span>
-      <div class="product-img-wrap fi">
-        <img src="https://checkout.payt.com.br/c/LGG8NL?img=1" alt="Produto Toque da Fada" loading="lazy" />
+      <div class="products-grid fi">
+        <div class="product-card"><img src="../brand-assets/produtos_banners/TOQUE_DE_SEDA.png" alt="Toque de Seda" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DO_BOQUETE.png" alt="Rainha do Boquete" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DA_SENTADA.png" alt="Rainha da Sentada" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/SEGREDOS_DO_PRAZER_ANAL.png" alt="Segredos do Prazer Anal" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/SEXZAP.png" alt="Sexzap" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/CONTOS_EROTICOS.png" alt="Contos Eróticos" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/FOGO_SECRETO.png" alt="Fogo Secreto" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/SEGREDO_DA_LIBIDO.png" alt="Segredo da Libido" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/MANUAL_DA_SEDUÇÃO.png" alt="Manual da Sedução" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/ZODIACO_DO_SEXO.png" alt="Zodíaco do Sexo" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DO_POMPOARISMO.png" alt="Rainha do Pompoarismo" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/100_POSICOES_PARA_SER_INESQUECIVEL.png" alt="100 Posições" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/RAINHA_DO_KAMA_SUTRA.png" alt="Rainha do Kama Sutra" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/QUIZ_5_LINGUAGENS_SEXUAIS.png" alt="Quiz 5 Linguagens Sexuais" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/TECNICA_DA_TOALHA.png" alt="Técnica da Toalha" loading="lazy" /></div>
+        <div class="product-card"><img src="../brand-assets/produtos_banners/MENTORIA_CHAMA_ACESA.png" alt="Mentoria Chama Acesa" loading="lazy" /></div>
       </div>
     </div>
   </section>
 
-  <!-- BENEFÍCIOS -->
-  <section id="beneficios">
-    <div class="container text-center">
-      <span class="eyebrow fi">Conteúdo completo</span>
-      <h2 class="sec-title fi d1">Tudo que está incluso no seu acesso</h2>
-      <div class="divider fi d2"></div>
-      <ul class="benefits-list">
-        <li class="fi d1">
-          <span class="ic-check">✓</span>
-          <span><strong>Curso Online Toque da Fada:</strong> Domine Mais de 12 Técnicas Que Vão Deixar Qualquer Homem Implorando Por Você - Aprenda na prática com modelos reais as técnicas que transformam mulheres comuns em verdadeiras deusas na cama.</span>
-        </li>
-        <li class="fi d2">
-          <span class="ic-check">✓</span>
-          <span><strong>Rainha do boquete:</strong> Aprenda com modelos reais a fazer as técnicas que vão deixar ele maluco na cama fazendo ele gozar 5x mais</span>
-        </li>
-        <li class="fi d3">
-          <span class="ic-check">✓</span>
-          <span><strong>Curso Rainha da sentada:</strong> Como dar um chá de sentada bem dado nele</span>
-        </li>
-        <li class="fi d4">
-          <span class="ic-check">✓</span>
-          <span><strong>Mapa do Prazer:</strong> Decifre as Fantasias Mais Secretas do Seu Parceiro Pelo Signo Dele - Descubra exatamente o que ele deseja entre quatro paredes mesmo sem ele te falar e torne-se a mulher que ele nunca mais vai esquecer.</span>
-        </li>
-        <li class="fi">
-          <span class="ic-check">✓</span>
-          <span><strong>Contos Eróticos:</strong> Que Vão Despertar Seus Desejos Mais Secretos - Entre no universo das noites mais intensas e descubra os detalhes que vão acender sua imaginação e transformar sua vida íntima.</span>
-        </li>
-        <li class="fi">
-          <span class="ic-check">✓</span>
-          <span><strong>Segredos do Prazer Anal:</strong> Aprenda de uma vez por todas como fazer aquele anal gostoso sem sentir dor e gozando muito</span>
-        </li>
-        <li class="fi">
-          <span class="ic-check">✓</span>
-          <span><strong>sexzap:</strong> Um curso completo com todas as frases que você precisa dizer que ativa o cérebro primitivo do homem fazendo ele te amar e transar mais</span>
-        </li>
-      </ul>
-    </div>
-  </section>
 
   <!-- PREÇO -->
   <section id="preco">
@@ -900,23 +902,26 @@
       <span class="eyebrow fi">Resultados reais</span>
       <p class="test-intro fi d1">"Mulheres Como Você Já Estão <strong>Se Tornando Inesquecíveis</strong>"</p>
       <div class="divider fi d2"></div>
-      <div class="test-grid">
-        <div class="test-photo fi d1">
-          <img src="https://checkout.payt.com.br/c/LGG8NL?img=2" alt="Depoimento 1" loading="lazy" onerror="this.parentElement.style.display='none'" />
+      <div class="carousel-wrap">
+        <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
+        <div class="carousel-track" id="testimonialCarousel">
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/02f1406.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/4db9cbc.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/5967914.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/5967914%20%281%29.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/6b32a56.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/fb9b9b5.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/fd594d3.webp" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/9123609e-5fa4-47b9-b843-fa7125d362f4%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/b480155b-77af-4741-b984-2bc04e889890%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1009%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1010%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/IMG_1011%201.png" alt="Depoimento" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="../brand-assets/depoimentos/oooo.png" alt="Depoimento" loading="lazy" /></div>
         </div>
-        <div class="test-photo fi d2">
-          <img src="https://checkout.payt.com.br/c/LGG8NL?img=3" alt="Depoimento 2" loading="lazy" onerror="this.parentElement.style.display='none'" />
-        </div>
-        <div class="test-photo fi d3">
-          <img src="https://checkout.payt.com.br/c/LGG8NL?img=4" alt="Depoimento 3" loading="lazy" onerror="this.parentElement.style.display='none'" />
-        </div>
-        <div class="test-photo fi d4">
-          <img src="https://checkout.payt.com.br/c/LGG8NL?img=5" alt="Depoimento 4" loading="lazy" onerror="this.parentElement.style.display='none'" />
-        </div>
-        <div class="test-photo fi">
-          <img src="https://checkout.payt.com.br/c/LGG8NL?img=6" alt="Depoimento 5" loading="lazy" onerror="this.parentElement.style.display='none'" />
-        </div>
+        <button class="carousel-btn carousel-next" aria-label="Próximo">&#8250;</button>
       </div>
+      <div class="carousel-dots" id="carouselDots"></div>
       <p class="test-caption fi" style="margin-top:32px;">"Esses são apenas alguns exemplos do que você vai viver ao entrar para o treinamento e aplicar as técnicas."</p>
       <div class="cta-wrap" style="margin-top:48px;">
         <a href="https://payfast.greenn.com.br/redirect/260495" rel="noopener noreferrer" class="btn btn-pk btn-lg fi">
@@ -1086,6 +1091,63 @@
       document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     }
+
+    // ===========================
+    // Carrossel de depoimentos
+    // ===========================
+    (function() {
+      const track = document.getElementById('testimonialCarousel');
+      const dotsContainer = document.getElementById('carouselDots');
+      if (!track) return;
+
+      const slides = track.querySelectorAll('.carousel-slide');
+      const total = slides.length;
+      let current = 0;
+      let autoTimer;
+
+      // Criar dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Depoimento ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateDots(idx) {
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+
+      function goTo(idx) {
+        current = (idx + total) % total;
+        slides[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        updateDots(current);
+      }
+
+      // Sync dots on scroll
+      track.addEventListener('scroll', () => {
+        const slideW = slides[0].offsetWidth + 16;
+        const idx = Math.round(track.scrollLeft / slideW);
+        if (idx !== current) { current = idx; updateDots(current); }
+      }, { passive: true });
+
+      // Botões prev/next
+      const section = track.closest('#depoimentos');
+      const prevBtn = section.querySelector('.carousel-prev');
+      const nextBtn = section.querySelector('.carousel-next');
+      if (prevBtn) prevBtn.addEventListener('click', () => { clearInterval(autoTimer); goTo(current - 1); startAuto(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { clearInterval(autoTimer); goTo(current + 1); startAuto(); });
+
+      // Auto-play
+      function startAuto() {
+        autoTimer = setInterval(() => goTo(current + 1), 3500);
+      }
+      track.addEventListener('mouseenter', () => clearInterval(autoTimer));
+      track.addEventListener('mouseleave', startAuto);
+      startAuto();
+    })();
 
     // ===========================
     // Cupom dinâmico LARIFLIX
