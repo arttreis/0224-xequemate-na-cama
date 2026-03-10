@@ -109,6 +109,20 @@
 
         .btn-manual:hover { opacity: 1; }
 
+        /* Timer: elementos ocultos até os 19min */
+        .hidden-until-reveal {
+            opacity: 0;
+            pointer-events: none;
+            animation-play-state: paused; /* não desperdiça CPU durante a espera */
+            transition: opacity 0.8s ease;
+        }
+
+        .hidden-until-reveal.revealed {
+            opacity: 1;
+            pointer-events: auto;
+            animation-play-state: running;
+        }
+
         /* Background Glows */
         .glow {
             position: absolute;
@@ -126,11 +140,11 @@
     <div class="glow" style="bottom: -100px; right: -100px;"></div>
 
     <div class="redirect-container">
-        <span class="loader"></span>
+        <span class="loader hidden-until-reveal"></span>
         <h1>Preparando seu acesso...</h1>
-        <p>Você está sendo redirecionada para um grupo exclusivo.</p>
-        
-        <a id="manual-link" href="https://chat.whatsapp.com/EXRBVBJRgxp1t9XPs9M1s2?mode=gi_t" class="btn-manual">
+        <p class="hidden-until-reveal">Você está sendo redirecionada para um grupo exclusivo.</p>
+
+        <a id="manual-link" href="https://chat.whatsapp.com/EXRBVBJRgxp1t9XPs9M1s2?mode=gi_t" class="btn-manual hidden-until-reveal" tabindex="-1">
             Clique aqui se não for redirecionada
         </a>
     </div>
@@ -178,13 +192,33 @@
 
         var finalUrl = currentUTMs ? appendUTMs(DEST_URL, currentUTMs) : DEST_URL;
 
-        // Atualiza o link manual por segurança
+        // Atualiza o link manual
         document.getElementById('manual-link').href = finalUrl;
 
-        // Redirecionamento após pequeno delay para garantir disparo de scripts de track
+        // Timer de 19 minutos: revela conteúdo e redireciona
+        var REVEAL_DELAY = 19 * 60 * 1000; // 19 minutos em ms
+        var TRANSITION_DURATION = 900;      // 0.8s de fade + 100ms buffer
+
         setTimeout(function(){
-            window.location.replace(finalUrl);
-        }, 800);
+            var hidden = document.querySelectorAll('.hidden-until-reveal');
+
+            // Habilita navegação por teclado no link antes da transição
+            document.getElementById('manual-link').removeAttribute('tabindex');
+
+            // Inicia fade-in
+            hidden.forEach(function(el){ el.classList.add('revealed'); });
+
+            // Remove a classe auxiliar após o fade para restaurar estilos originais
+            // (ex: opacity 0.8 e transition 0.3s do .btn-manual)
+            setTimeout(function(){
+                hidden.forEach(function(el){ el.classList.remove('hidden-until-reveal'); });
+            }, TRANSITION_DURATION);
+
+            // Redireciona 800ms após a revelação (garante disparo dos scripts de track)
+            setTimeout(function(){
+                window.location.replace(finalUrl);
+            }, 800);
+        }, REVEAL_DELAY);
     })();
     </script>
 </body>
