@@ -520,6 +520,14 @@
         data.source = 'mentoria-casais';
         localStorage.setItem('mentoria_casais_form', JSON.stringify(data));
 
+        // Send to Google Sheets
+        fetch('https://script.google.com/macros/s/AKfycbzvBK9BkFrTPp01I7r5Dh2UFnytMHVceZxm11Pt8i4ccPFu5rGEOtv63gHQumlg4LEu/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }).catch(function() {});
+
         // Track
         if (typeof fbq === 'function') {
           fbq('track', 'Lead', { content_name: 'Mentoria Casais Form' });
