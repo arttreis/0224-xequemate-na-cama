@@ -181,21 +181,25 @@
       text-shadow: 0 2px 12px rgba(0,0,0,.5);
     }
 
+    .hero__img-mob {
+      display: none;
+    }
+
     @media (max-width: 520px) {
-      .hero { height: 320px; }
-      .hero__img {
-        width: auto;
-        height: 100%;
+      .hero__img { display: none; }
+      .hero__img-mob {
+        display: block;
+        width: 100%;
+        height: auto;
         object-fit: cover;
-        object-position: left top;
+        object-position: center top;
       }
       .hero__overlay {
         align-items: center;
         text-align: center;
         padding: 0 16px;
         justify-content: flex-end;
-        padding-bottom: 20px;
-        background: linear-gradient(to top, rgba(8,2,18,.7) 0%, transparent 60%);
+        padding-bottom: 24px;
       }
       .hero__line1 { font-size: .9rem; }
       .hero__line2 { font-size: 1.3rem; }
@@ -451,6 +455,7 @@
   <!-- HERO BANNER -->
   <div class="hero">
     <img class="hero__img" src="../brand-assets/produtos_banners/hero-consumidor.png" alt="Semana do Consumidor — Larissa Oliveira" />
+    <img class="hero__img-mob" src="../brand-assets/produtos_banners/hero-consumidor-mob.png" alt="Semana do Consumidor — Larissa Oliveira" />
     <div class="hero__overlay">
       <span class="hero__line1">Promoção</span>
       <div class="hero__line2">
