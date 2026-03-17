@@ -322,18 +322,16 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding: 140px 24px 100px;
+      padding: 140px 24px 100px 15%;
       overflow: hidden;
-      background: url('../brand-assets/larissa/mentoria/ACENDA%20A%20CHAMA.png') no-repeat right bottom / contain;
+      background: url('../brand-assets/larissa/mentoria/ACENDA%20A%20CHAMA.png') no-repeat right top / cover;
     }
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, rgba(8,2,18,.95) 0%, rgba(8,2,18,.7) 50%, rgba(8,2,18,.2) 100%),
-        radial-gradient(ellipse 70% 50% at 50% 20%, rgba(124, 58, 237, .25) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 30% 60%, rgba(233, 30, 140, .15) 0%, transparent 60%);
+        linear-gradient(to right, rgba(8,2,18,.92) 0%, rgba(8,2,18,.6) 45%, transparent 100%);
       z-index: 0;
     }
     .hero-inner {
@@ -1145,16 +1143,15 @@
       .navbar { padding: 12px 20px; }
       section { padding: 64px 16px; }
       .hero {
-        padding: 120px 16px 80px;
+        padding: 120px 16px 80px 5%;
         min-height: auto;
         background-image: url('../brand-assets/larissa/mentoria/ACENDA%20A%20CHAMA-mob.png');
-        background-position: right bottom;
-        background-size: 50%;
+        background-position: right top;
+        background-size: cover;
       }
       .hero::before {
         background:
-          linear-gradient(to right, rgba(8,2,18,.97) 0%, rgba(8,2,18,.85) 55%, rgba(8,2,18,.4) 100%),
-          radial-gradient(ellipse 70% 50% at 50% 20%, rgba(124, 58, 237, .25) 0%, transparent 70%);
+          linear-gradient(to right, rgba(8,2,18,.93) 0%, rgba(8,2,18,.6) 50%, transparent 100%);
       }
       .hero-inner { max-width: 70%; }
       .what-is-grid { grid-template-columns: 1fr; gap: 32px; }
