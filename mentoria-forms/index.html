@@ -501,10 +501,12 @@
     function collectData() {
       const data = {};
       steps.forEach(s => {
-        const input = s.querySelector('.input-field') || s.querySelector('input[type="radio"]:checked');
-        if (input) {
-          const name = input.name || input.closest('.radio-group')?.dataset.name;
-          data[name] = input.type === 'radio' ? input.value : input.value.trim();
+        const textInput = s.querySelector('.input-field');
+        const radioInput = s.querySelector('input[type="radio"]:checked');
+        if (textInput) {
+          data[textInput.name] = textInput.value.trim();
+        } else if (radioInput) {
+          data[radioInput.name] = radioInput.value;
         }
       });
       return data;
@@ -524,7 +526,7 @@
         fetch('https://script.google.com/macros/s/AKfycbzvBK9BkFrTPp01I7r5Dh2UFnytMHVceZxm11Pt8i4ccPFu5rGEOtv63gHQumlg4LEu/exec', {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(data)
         }).catch(function() {});
 
@@ -564,11 +566,13 @@
         const errEl = document.getElementById('err-' + currentStep);
         if (errEl) errEl.classList.remove('show');
 
-        // Auto-advance after short delay
+        // Auto-advance after short delay (submit on last step)
         setTimeout(() => {
           if (currentStep < totalSteps) {
             currentStep++;
             updateUI();
+          } else {
+            btnNext.click();
           }
         }, 400);
       });
