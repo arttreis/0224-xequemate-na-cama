@@ -230,10 +230,15 @@
       gap: 12px;
     }
     .navbar-logo img { height: 36px; width: auto; }
-    .navbar-logo span {
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 700;
+    .navbar-logo .navbar-timer {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+    .navbar-logo .navbar-timer strong {
+      -webkit-text-fill-color: initial;
+      color: var(--pink-light);
     }
     .navbar-links { display: flex; gap: 28px; align-items: center; }
     .navbar-links a {
@@ -1188,7 +1193,7 @@
   <nav class="navbar" role="navigation" aria-label="Navegação principal">
     <div class="navbar-logo">
       <img src="../brand-assets/larissa/IV-LARISSA-NEGATIVO 3.png" alt="Logo Larissa Oliveira" width="36" height="36" />
-      <span class="grad-text">Chama Acesa</span>
+      <span class="grad-text navbar-timer" id="nav-timer">&#x23F3; Inscrições encerram em <strong id="nav-cd"></strong></span>
     </div>
     <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1709,6 +1714,8 @@
         if (diff === 0) {
           var container = document.getElementById('countdown-container');
           container.innerHTML = '<span class="countdown-expired">&#x1F525; Últimas vagas abertas — garanta a sua agora!</span>';
+          var navTimer = document.getElementById('nav-timer');
+          if (navTimer) navTimer.innerHTML = '&#x1F525; Últimas vagas!';
           if (intervalId) clearInterval(intervalId);
           return;
         }
@@ -1721,6 +1728,9 @@
         document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
         document.getElementById('cd-min').textContent = String(m).padStart(2, '0');
         document.getElementById('cd-sec').textContent = String(s).padStart(2, '0');
+
+        var navCd = document.getElementById('nav-cd');
+        if (navCd) navCd.textContent = String(d).padStart(2,'0') + 'd ' + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
       }
       tick();
       intervalId = setInterval(tick, 1000);
