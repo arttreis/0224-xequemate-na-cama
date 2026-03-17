@@ -182,7 +182,27 @@
     }
 
     @media (max-width: 520px) {
-      .hero__overlay { display: none; }
+      .hero { height: 320px; }
+      .hero__img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        object-position: left top;
+      }
+      .hero__overlay {
+        align-items: center;
+        text-align: center;
+        padding: 0 16px;
+        justify-content: flex-end;
+        padding-bottom: 20px;
+        background: linear-gradient(to top, rgba(8,2,18,.7) 0%, transparent 60%);
+      }
+      .hero__line1 { font-size: .9rem; }
+      .hero__line2 { font-size: 1.3rem; }
+      .hero__line2 span { padding: 2px 8px; }
+      .hero__badge { font-size: .7rem; padding: 5px 10px; }
+      .hero__line3-text { font-size: .7rem; }
+      .hero__line3 { margin-top: 8px; gap: 8px; }
     }
 
     /* ── CONTAINER ── */
