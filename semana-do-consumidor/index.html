@@ -133,32 +133,62 @@
       inset: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      text-align: center;
-      padding: 16px;
-      background: rgba(8, 2, 18, .45);
-      line-height: 1.2;
+      text-align: right;
+      padding: 16px 6% 16px 0;
+      line-height: 1.1;
     }
-    .hero__title {
-      font-size: 2rem;
+    .hero__line1 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0,0,0,.5);
+    }
+    .hero__line2 {
+      font-size: 2.6rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 2px;
       color: #fff;
-      text-shadow: 0 2px 20px rgba(0,0,0,.6);
+      line-height: 1.05;
+      margin-top: 4px;
     }
-    .hero__sub {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: rgba(255,255,255,.85);
-      margin-top: 8px;
+    .hero__line2 span {
+      background: linear-gradient(135deg, #e91e8c 0%, #c026d3 100%);
+      padding: 2px 12px;
+      display: inline-block;
+      margin-top: 2px;
+    }
+    .hero__line3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .hero__badge {
+      background: linear-gradient(135deg, #e91e8c 0%, #c026d3 100%);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 6px;
+      letter-spacing: .5px;
+    }
+    .hero__line3-text {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.9);
       text-shadow: 0 2px 12px rgba(0,0,0,.5);
     }
 
     @media (max-width: 520px) {
-      .hero__title { font-size: 1.2rem; letter-spacing: 1px; }
-      .hero__sub { font-size: .85rem; }
+      .hero__overlay { padding: 10px 4% 10px 0; }
+      .hero__line1 { font-size: .75rem; }
+      .hero__line2 { font-size: 1.1rem; }
+      .hero__line2 span { padding: 1px 6px; }
+      .hero__badge { font-size: .6rem; padding: 4px 8px; }
+      .hero__line3-text { font-size: .6rem; }
+      .hero__line3 { margin-top: 6px; gap: 6px; }
     }
 
     /* ── CONTAINER ── */
@@ -408,8 +438,15 @@
   <div class="hero">
     <img class="hero__img" src="../brand-assets/produtos_banners/hero-consumidor.png" alt="Semana do Consumidor — Larissa Oliveira" />
     <div class="hero__overlay">
-      <span class="hero__title">Promoção Semana do Consumidor</span>
-      <span class="hero__sub">15% em todos os nossos cursos</span>
+      <span class="hero__line1">Promoção</span>
+      <div class="hero__line2">
+        <span>Semana do</span><br>
+        <span>Consumidor</span>
+      </div>
+      <div class="hero__line3">
+        <span class="hero__badge">15% OFF</span>
+        <span class="hero__line3-text">em todos nossos cursos</span>
+      </div>
     </div>
   </div>
 
