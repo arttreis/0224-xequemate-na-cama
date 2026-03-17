@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '661630316482683');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=661630316482683&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <title>Formulário de Qualificação — Mentoria Casais</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" type="image/png" href="../brand-assets/larissa/IV-LARISSA-NEGATIVO%203.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #080212;
+      --bg2: #0e0520;
+      --bg3: #130628;
+      --pink: #C612D3;
+      --pink-light: #e040ef;
+      --purple: #7c3aed;
+      --gold: #fde047;
+      --grad: linear-gradient(135deg, #C612D3 0%, #7c3aed 100%);
+      --white: #ffffff;
+      --muted: rgba(255,255,255,.6);
+      --border: rgba(255,255,255,.08);
+      --border-pk: rgba(198,18,211,.22);
+      --r: 16px;
+      --r-xl: 24px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--sans);
+      overflow-x: hidden;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* Grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: .025;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Form container */
+    .form-container {
+      width: 100%;
+      max-width: 560px;
+      padding: 40px 24px;
+      margin: 0 auto;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .form-header img {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+    }
+    .form-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .form-header p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Progress bar */
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,.08);
+      border-radius: 3px;
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--grad);
+      border-radius: 3px;
+      transition: width .4s ease;
+      width: 0%;
+    }
+
+    /* Step counter */
+    .step-counter {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+
+    /* Step */
+    .step {
+      display: none;
+      animation: stepIn .4s ease forwards;
+    }
+    .step.active { display: block; }
+
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-question {
+      font-family: var(--serif);
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* Text input */
+    .input-field {
+      width: 100%;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border-pk);
+      border-radius: var(--r);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 16px;
+      outline: none;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .input-field::placeholder { color: rgba(255,255,255,.3); }
+    .input-field:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(198,18,211,.15);
+    }
+
+    /* Radio options */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      cursor: pointer;
+      transition: border-color .3s, background .3s;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .radio-option:hover {
+      border-color: var(--border-pk);
+      background: rgba(198,18,211,.06);
+    }
+    .radio-option.selected {
+      border-color: var(--pink);
+      background: rgba(198,18,211,.1);
+    }
+    .radio-option input { display: none; }
+    .radio-dot {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.25);
+      transition: border-color .3s, background .3s;
+      position: relative;
+    }
+    .radio-option.selected .radio-dot {
+      border-color: var(--pink);
+      background: var(--pink);
+    }
+    .radio-option.selected .radio-dot::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px; height: 8px;
+      background: var(--white);
+      border-radius: 50%;
+    }
+
+    /* Buttons */
+    .form-nav {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: transform .3s, box-shadow .3s;
+      text-decoration: none;
+      flex: 1;
+    }
+    .btn-next {
+      background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+      color: #1a1a1a;
+    }
+    .btn-next:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(253,224,71,.35);
+    }
+    .btn-next:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .btn-back {
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      flex: 0;
+      padding: 16px 24px;
+    }
+    .btn-back:hover { background: rgba(255,255,255,.1); }
+
+    /* Validation */
+    .error-msg {
+      color: #f87171;
+      font-size: 13px;
+      margin-top: 8px;
+      display: none;
+    }
+    .error-msg.show { display: block; }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+    <div class="form-header">
+      <img src="../brand-assets/larissa/IV-LARISSA-NEGATIVO%203.png" alt="Logo" />
+      <h1>Formulário de <span style="background:linear-gradient(135deg,#C612D3,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Qualificação</span></h1>
+      <p>Responda com sinceridade para sabermos se a mentoria é ideal para você.</p>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="step-counter" id="stepCounter">1 de 13</div>
+
+    <form id="qualForm" novalidate>
+
+      <!-- Step 1: Nome -->
+      <div class="step active" data-step="1" data-type="text" data-required="true">
+        <h2 class="step-question">Qual é o seu nome?</h2>
+        <input type="text" class="input-field" name="nome" placeholder="Gatona" autocomplete="given-name" />
+        <div class="error-msg" id="err-1">Por favor, preencha seu nome.</div>
+      </div>
+
+      <!-- Step 2: WhatsApp -->
+      <div class="step" data-step="2" data-type="tel" data-required="true">
+        <h2 class="step-question">Qual o seu WhatsApp?</h2>
+        <input type="tel" class="input-field" name="whatsapp" placeholder="DDD + Número" autocomplete="tel" />
+        <div class="error-msg" id="err-2">Informe um número de WhatsApp válido.</div>
+      </div>
+
+      <!-- Step 3: Idade -->
+      <div class="step" data-step="3" data-type="number" data-required="false">
+        <h2 class="step-question">Qual a sua idade?</h2>
+        <input type="number" class="input-field" name="idade" placeholder="0" min="18" max="99" />
+      </div>
+
+      <!-- Step 4: Intimidade -->
+      <div class="step" data-step="4" data-type="radio" data-required="true">
+        <h2 class="step-question">Como você descreveria a intimidade do casal hoje?</h2>
+        <div class="radio-group" data-name="intimidade">
+          <label class="radio-option"><input type="radio" name="intimidade" value="Praticamente inexistente" /><span class="radio-dot"></span>Praticamente inexistente</label>
+          <label class="radio-option"><input type="radio" name="intimidade" value="Existe, mas é mecânica/sem conexão" /><span class="radio-dot"></span>Existe, mas é mecânica/sem conexão</label>
+          <label class="radio-option"><input type="radio" name="intimidade" value="Temos momentos bons, mas inconsistentes" /><span class="radio-dot"></span>Temos momentos bons, mas inconsistentes</label>
+          <label class="radio-option"><input type="radio" name="intimidade" value="É boa, mas quero elevar o nível" /><span class="radio-dot"></span>É boa, mas quero elevar o nível</label>
+        </div>
+        <div class="error-msg" id="err-4">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 5: O que pesa -->
+      <div class="step" data-step="5" data-type="radio" data-required="true">
+        <h2 class="step-question">O que mais tem pesado no seu relacionamento?</h2>
+        <div class="radio-group" data-name="peso">
+          <label class="radio-option"><input type="radio" name="peso" value="Falta de desejo/atração" /><span class="radio-dot"></span>Falta de desejo/atração</label>
+          <label class="radio-option"><input type="radio" name="peso" value="Brigas constantes e desgaste" /><span class="radio-dot"></span>Brigas constantes e desgaste</label>
+          <label class="radio-option"><input type="radio" name="peso" value="Distância emocional" /><span class="radio-dot"></span>Distância emocional</label>
+          <label class="radio-option"><input type="radio" name="peso" value="Infidelidade ou quebra de confiança" /><span class="radio-dot"></span>Infidelidade ou quebra de confiança</label>
+        </div>
+        <div class="error-msg" id="err-5">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 6: Como se sente -->
+      <div class="step" data-step="6" data-type="radio" data-required="true">
+        <h2 class="step-question">Como você se sente como mulher hoje?</h2>
+        <div class="radio-group" data-name="sentimento">
+          <label class="radio-option"><input type="radio" name="sentimento" value="Insegura e desvalorizada" /><span class="radio-dot"></span>Insegura e desvalorizada</label>
+          <label class="radio-option"><input type="radio" name="sentimento" value="Cansada e sem energia" /><span class="radio-dot"></span>Cansada e sem energia</label>
+          <label class="radio-option"><input type="radio" name="sentimento" value="Quero me redescobrir" /><span class="radio-dot"></span>Quero me redescobrir</label>
+          <label class="radio-option"><input type="radio" name="sentimento" value="Estou bem, mas sei que posso mais" /><span class="radio-dot"></span>Estou bem, mas sei que posso mais</label>
+        </div>
+        <div class="error-msg" id="err-6">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 7: Pode melhorar -->
+      <div class="step" data-step="7" data-type="radio" data-required="true">
+        <h2 class="step-question">Você acredita que sua vida íntima pode melhorar com orientação?</h2>
+        <div class="radio-group" data-name="orientacao">
+          <label class="radio-option"><input type="radio" name="orientacao" value="Com certeza, estou pronta" /><span class="radio-dot"></span>Com certeza, estou pronta</label>
+          <label class="radio-option"><input type="radio" name="orientacao" value="Acredito, mas tenho dúvidas" /><span class="radio-dot"></span>Acredito, mas tenho dúvidas</label>
+          <label class="radio-option"><input type="radio" name="orientacao" value="Talvez, preciso entender melhor" /><span class="radio-dot"></span>Talvez, preciso entender melhor</label>
+          <label class="radio-option"><input type="radio" name="orientacao" value="Não sei se funciona para mim" /><span class="radio-dot"></span>Não sei se funciona para mim</label>
+        </div>
+        <div class="error-msg" id="err-7">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 8: Já tentou -->
+      <div class="step" data-step="8" data-type="radio" data-required="true">
+        <h2 class="step-question">Você já tentou mudar essa situação antes?</h2>
+        <div class="radio-group" data-name="tentou">
+          <label class="radio-option"><input type="radio" name="tentou" value="Sim, mas nada funcionou" /><span class="radio-dot"></span>Sim, mas nada funcionou</label>
+          <label class="radio-option"><input type="radio" name="tentou" value="Sim, tive algum resultado" /><span class="radio-dot"></span>Sim, tive algum resultado</label>
+          <label class="radio-option"><input type="radio" name="tentou" value="Não, é a primeira vez" /><span class="radio-dot"></span>Não, é a primeira vez</label>
+          <label class="radio-option"><input type="radio" name="tentou" value="Já fiz terapia de casal" /><span class="radio-dot"></span>Já fiz terapia de casal</label>
+        </div>
+        <div class="error-msg" id="err-8">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 9: Relacionamento -->
+      <div class="step" data-step="9" data-type="radio" data-required="true">
+        <h2 class="step-question">Como está o seu relacionamento agora?</h2>
+        <div class="radio-group" data-name="relacionamento">
+          <label class="radio-option"><input type="radio" name="relacionamento" value="À beira do divórcio" /><span class="radio-dot"></span>À beira do divórcio</label>
+          <label class="radio-option"><input type="radio" name="relacionamento" value="Desgastado, mas ainda com esperança" /><span class="radio-dot"></span>Desgastado, mas ainda com esperança</label>
+          <label class="radio-option"><input type="radio" name="relacionamento" value="Estável, mas sem graça" /><span class="radio-dot"></span>Estável, mas sem graça</label>
+          <label class="radio-option"><input type="radio" name="relacionamento" value="Bom, mas quero melhorar" /><span class="radio-dot"></span>Bom, mas quero melhorar</label>
+        </div>
+        <div class="error-msg" id="err-9">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 10: Parceiro sabe -->
+      <div class="step" data-step="10" data-type="radio" data-required="true">
+        <h2 class="step-question">Seu parceiro sabe que você está buscando ajuda?</h2>
+        <div class="radio-group" data-name="parceiro_sabe">
+          <label class="radio-option"><input type="radio" name="parceiro_sabe" value="Sim, e ele apoia" /><span class="radio-dot"></span>Sim, e ele apoia</label>
+          <label class="radio-option"><input type="radio" name="parceiro_sabe" value="Sim, mas ele é resistente" /><span class="radio-dot"></span>Sim, mas ele é resistente</label>
+          <label class="radio-option"><input type="radio" name="parceiro_sabe" value="Não, estou fazendo sozinha" /><span class="radio-dot"></span>Não, estou fazendo sozinha</label>
+          <label class="radio-option"><input type="radio" name="parceiro_sabe" value="Vou contar depois" /><span class="radio-dot"></span>Vou contar depois</label>
+        </div>
+        <div class="error-msg" id="err-10">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 11: Tempo semanal -->
+      <div class="step" data-step="11" data-type="radio" data-required="true">
+        <h2 class="step-question">Quanto tempo por semana você pode dedicar à mentoria?</h2>
+        <div class="radio-group" data-name="tempo">
+          <label class="radio-option"><input type="radio" name="tempo" value="Menos de 1 hora" /><span class="radio-dot"></span>Menos de 1 hora</label>
+          <label class="radio-option"><input type="radio" name="tempo" value="1 a 3 horas" /><span class="radio-dot"></span>1 a 3 horas</label>
+          <label class="radio-option"><input type="radio" name="tempo" value="3 a 5 horas" /><span class="radio-dot"></span>3 a 5 horas</label>
+          <label class="radio-option"><input type="radio" name="tempo" value="Mais de 5 horas" /><span class="radio-dot"></span>Mais de 5 horas</label>
+        </div>
+        <div class="error-msg" id="err-11">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 12: Renda -->
+      <div class="step" data-step="12" data-type="radio" data-required="true">
+        <h2 class="step-question">Qual a sua renda mensal?</h2>
+        <div class="radio-group" data-name="renda">
+          <label class="radio-option"><input type="radio" name="renda" value="Até R$ 2.000" /><span class="radio-dot"></span>Até R$ 2.000</label>
+          <label class="radio-option"><input type="radio" name="renda" value="R$ 2.000 a R$ 5.000" /><span class="radio-dot"></span>R$ 2.000 a R$ 5.000</label>
+          <label class="radio-option"><input type="radio" name="renda" value="R$ 5.000 a R$ 10.000" /><span class="radio-dot"></span>R$ 5.000 a R$ 10.000</label>
+          <label class="radio-option"><input type="radio" name="renda" value="Acima de R$ 10.000" /><span class="radio-dot"></span>Acima de R$ 10.000</label>
+        </div>
+        <div class="error-msg" id="err-12">Selecione uma opção.</div>
+      </div>
+
+      <!-- Step 13: Interesse -->
+      <div class="step" data-step="13" data-type="radio" data-required="true">
+        <h2 class="step-question">Você tem interesse em um acompanhamento personalizado?</h2>
+        <div class="radio-group" data-name="interesse">
+          <label class="radio-option"><input type="radio" name="interesse" value="Sim, quero começar agora" /><span class="radio-dot"></span>Sim, quero começar agora</label>
+          <label class="radio-option"><input type="radio" name="interesse" value="Sim, mas preciso de mais informações" /><span class="radio-dot"></span>Sim, mas preciso de mais informações</label>
+          <label class="radio-option"><input type="radio" name="interesse" value="Talvez, depende do investimento" /><span class="radio-dot"></span>Talvez, depende do investimento</label>
+          <label class="radio-option"><input type="radio" name="interesse" value="Apenas estou curiosa" /><span class="radio-dot"></span>Apenas estou curiosa</label>
+        </div>
+        <div class="error-msg" id="err-13">Selecione uma opção.</div>
+      </div>
+
+    </form>
+
+    <div class="form-nav">
+      <button type="button" class="btn btn-back" id="btnBack" style="display:none;">&#8592;</button>
+      <button type="button" class="btn btn-next" id="btnNext">Próximo &#8594;</button>
+    </div>
+  </div>
+
+  <!-- UTMify Pixel -->
+  <script>
+    window.pixelId = "69823a20b4e212558d432412";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
+  <script>
+  (function() {
+    const steps = document.querySelectorAll('.step');
+    const totalSteps = steps.length;
+    let currentStep = 1;
+
+    const progressFill = document.getElementById('progressFill');
+    const stepCounter = document.getElementById('stepCounter');
+    const btnNext = document.getElementById('btnNext');
+    const btnBack = document.getElementById('btnBack');
+
+    function updateUI() {
+      steps.forEach(s => s.classList.remove('active'));
+      const active = document.querySelector('[data-step="' + currentStep + '"]');
+      if (active) active.classList.add('active');
+
+      progressFill.style.width = ((currentStep / totalSteps) * 100) + '%';
+      stepCounter.textContent = currentStep + ' de ' + totalSteps;
+
+      btnBack.style.display = currentStep > 1 ? '' : 'none';
+      btnNext.textContent = currentStep === totalSteps ? 'Enviar' : 'Próximo \u2192';
+
+      // Focus text input
+      const input = active && active.querySelector('.input-field');
+      if (input) setTimeout(() => input.focus(), 100);
+    }
+
+    function getStepValue(stepEl) {
+      const type = stepEl.dataset.type;
+      if (type === 'text' || type === 'tel' || type === 'number') {
+        return stepEl.querySelector('.input-field').value.trim();
+      }
+      if (type === 'radio') {
+        const checked = stepEl.querySelector('input[type="radio"]:checked');
+        return checked ? checked.value : '';
+      }
+      return '';
+    }
+
+    function validateStep() {
+      const stepEl = document.querySelector('[data-step="' + currentStep + '"]');
+      const required = stepEl.dataset.required === 'true';
+      const errEl = document.getElementById('err-' + currentStep);
+
+      if (!required) return true;
+
+      const val = getStepValue(stepEl);
+      if (!val) {
+        if (errEl) errEl.classList.add('show');
+        return false;
+      }
+
+      // Validate WhatsApp
+      if (stepEl.dataset.type === 'tel') {
+        const digits = val.replace(/\D/g, '');
+        if (digits.length < 10 || digits.length > 11) {
+          if (errEl) errEl.classList.add('show');
+          return false;
+        }
+      }
+
+      if (errEl) errEl.classList.remove('show');
+      return true;
+    }
+
+    function collectData() {
+      const data = {};
+      steps.forEach(s => {
+        const input = s.querySelector('.input-field') || s.querySelector('input[type="radio"]:checked');
+        if (input) {
+          const name = input.name || input.closest('.radio-group')?.dataset.name;
+          data[name] = input.type === 'radio' ? input.value : input.value.trim();
+        }
+      });
+      return data;
+    }
+
+    btnNext.addEventListener('click', function() {
+      if (!validateStep()) return;
+
+      if (currentStep === totalSteps) {
+        // Collect and save
+        const data = collectData();
+        data.submitted_at = new Date().toISOString();
+        data.source = 'mentoria-casais';
+        localStorage.setItem('mentoria_casais_form', JSON.stringify(data));
+
+        // Track
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: 'Mentoria Casais Form' });
+        }
+
+        // Redirect
+        window.location.href = '../mentoria-obrigado/';
+        return;
+      }
+
+      currentStep++;
+      updateUI();
+    });
+
+    btnBack.addEventListener('click', function() {
+      if (currentStep > 1) {
+        currentStep--;
+        updateUI();
+      }
+    });
+
+    // Radio auto-advance
+    document.querySelectorAll('.radio-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const radio = this.querySelector('input[type="radio"]');
+        radio.checked = true;
+
+        // Update visual
+        const group = this.closest('.radio-group');
+        group.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+        this.classList.add('selected');
+
+        // Clear error
+        const errEl = document.getElementById('err-' + currentStep);
+        if (errEl) errEl.classList.remove('show');
+
+        // Auto-advance after short delay
+        setTimeout(() => {
+          if (currentStep < totalSteps) {
+            currentStep++;
+            updateUI();
+          }
+        }, 400);
+      });
+    });
+
+    // Enter key for text inputs
+    document.querySelectorAll('.input-field').forEach(input => {
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          btnNext.click();
+        }
+      });
+    });
+
+    updateUI();
+  })();
+  </script>
+
+</body>
+</html>
