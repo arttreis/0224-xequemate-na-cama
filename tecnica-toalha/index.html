@@ -374,33 +374,13 @@
     }
 
     /* ===========================
-       TIMER REVEAL
+       CTA WRAP
     =========================== */
-    #cta-wrap {
-      display: none;
+    .cta-wrap {
+      display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-    }
-
-    #cta-wrap.revealed {
-      display: flex;
-      animation: revealFadeIn 1.2s ease;
-    }
-
-    #reveal-sections {
-      display: none;
-      width: 100%;
-    }
-
-    #reveal-sections.revealed {
-      display: block;
-      animation: revealFadeIn 1.2s ease;
-    }
-
-    @keyframes revealFadeIn {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* ===========================
@@ -1003,8 +983,7 @@
         </iframe>
       </div>
 
-      <!-- CTA — oculto até o temporizador disparar -->
-      <div id="cta-wrap">
+      <div class="cta-wrap">
         <a
           href="https://payfast.greenn.com.br/np8ge5d"
           class="btn"
@@ -1021,8 +1000,7 @@
 
     </main>
 
-    <!-- SEÇÕES REVELADAS APÓS TIMER -->
-    <div id="reveal-sections">
+    <div>
 
       <!-- 50/50 PRÁTICA -->
       <section style="padding-bottom:0;">
@@ -1295,7 +1273,7 @@
         </div>
       </section>
 
-    </div><!-- /#reveal-sections -->
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -1311,23 +1289,6 @@
     </footer>
 
   </div>
-
-  <!-- TEMPORIZADOR INVISÍVEL: 4 min = 240 000 ms (micro-VSL é mais curta) -->
-  <script>
-    (function () {
-      var DELAY_MS = 240000;
-
-      function revelarConteudo() {
-        document.getElementById('cta-wrap').classList.add('revealed');
-        document.getElementById('reveal-sections').classList.add('revealed');
-        if (typeof fbq === 'function') {
-          fbq('track', 'ViewContent');
-        }
-      }
-
-      setTimeout(revelarConteudo, DELAY_MS);
-    })();
-  </script>
 
   <!-- UTM Persistence: propaga parâmetros UTM para links de checkout -->
   <script>
