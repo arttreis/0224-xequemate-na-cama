@@ -413,7 +413,7 @@
 
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(32px, 5.5vw, 62px);
+      font-size: clamp(24px, 3.8vw, 42px);
       font-weight: 900;
       line-height: 1.1;
       margin-bottom: 24px;
@@ -838,8 +838,8 @@
     =========================== */
     .depoimentos-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
       margin-top: 48px;
     }
     .depoimento-img-card {
@@ -847,6 +847,7 @@
       overflow: hidden;
       border: 1px solid var(--border-pk);
       background: #160c28;
+      max-height: 280px;
     }
     .depoimento-img-card img {
       width: 100%;
@@ -1229,7 +1230,7 @@
       .garantia-box { padding: 32px 24px; }
       .pricing-box { padding: 32px 20px; }
       .final-cta { padding: 80px 16px 120px; }
-      .depoimentos-grid { grid-template-columns: 1fr; }
+      .depoimentos-grid { grid-template-columns: repeat(2, 1fr); }
       .pilares-grid { grid-template-columns: 1fr; }
     }
 
