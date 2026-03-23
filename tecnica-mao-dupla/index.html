@@ -716,6 +716,38 @@
       .btn   { padding: 16px 24px; font-size: 14px; letter-spacing: .5px; }
       .trust { gap: 12px; font-size: 12px; }
     }
+
+    /* ===========================
+       FLOATING BOTTOM CTA
+    =========================== */
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9000;
+      padding: 14px 20px;
+      background: linear-gradient(to top, rgba(8,2,18,.97) 60%, rgba(8,2,18,0));
+      transform: translateY(100%);
+      opacity: 0;
+      transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+      pointer-events: none;
+    }
+
+    .floating-cta.visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .floating-cta .btn {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      font-size: 15px;
+      padding: 16px 32px;
+    }
   </style>
 </head>
 
@@ -1050,6 +1082,31 @@
     }
     if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init()
   })();
+  </script>
+
+  <!-- FLOATING BOTTOM CTA -->
+  <div class="floating-cta" id="floating-cta">
+    <a href="https://payfast.greenn.com.br/8fsy3p7/offer/yV43w5?cupom=LARIFLIX&ch_id=135537&b_id_1=pqb785u&b_offer_1=xk2Pvj&b_id_2=mfgaqmh&b_offer_2=DnBEfk"
+      class="btn"
+      onclick="fbq('track', 'InitiateCheckout');">
+      ♟️ Quero aprender agora
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      var hero = document.querySelector('.hero');
+      var bar = document.getElementById('floating-cta');
+      if (!hero || !bar) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          bar.classList.toggle('visible', !e.isIntersecting);
+        });
+      }, { threshold: 0 });
+
+      observer.observe(hero);
+    })();
   </script>
 
 </body>
